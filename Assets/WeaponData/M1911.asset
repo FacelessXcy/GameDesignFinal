@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e9ebaa231cc0145bb2f69ebfaccd8e, type: 3}
+  m_Name: M1911
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: -0.15, z: -0.075}
+  weaponName: M_1911
+  ammoType: 1
+  fireType: 0
+  weaponType: 1
+  reloadTime: 2.46
+  fireTime: 0.166
+  maxAmmo: 7
+  damage: 10
+  fireClip: {fileID: 8300000, guid: 46afaa7e6cd245d4e8f6df7a0f1493f4, type: 3}
+  reloadClip: {fileID: 8300000, guid: e2660f849dc65c945afef59835450936, type: 3}
+  dropWeaponPrefab: {fileID: 0}
+  range: 100
+  bulletSpreadAngle: 2
+  bulletHole: {fileID: 100002, guid: 0ea03743e0d497c4bbfe3b70756dcc15, type: 3}
+  dryFireClip: {fileID: 8300000, guid: 17a20244025722c4387359c88bd319a1, type: 3}
+  cartridge: {fileID: 100000, guid: e8d96cdf9096cab49a8a42d02ae67c8f, type: 3}
+  isRPG: 0
+  projectilePrefab: {fileID: 0}
+  isFlameThrower: 0
+  isMeleeWeapon: 0

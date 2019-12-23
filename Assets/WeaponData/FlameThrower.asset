@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e9ebaa231cc0145bb2f69ebfaccd8e, type: 3}
+  m_Name: FlameThrower
+  m_EditorClassIdentifier: 
+  offset: {x: 0.091, y: -0.211, z: 0.099}
+  weaponName: FlameThrower
+  ammoType: 3
+  fireType: 1
+  weaponType: 3
+  reloadTime: 8.5
+  fireTime: 0.001
+  maxAmmo: 250
+  damage: 10
+  fireClip: {fileID: 8300000, guid: dfb7ff197734dd94b8142411d044df19, type: 3}
+  reloadClip: {fileID: 8300000, guid: dc20fb9270680634ab77d731a3ffe48d, type: 3}
+  dropWeaponPrefab: {fileID: 139972, guid: 6a8a971c9d4d6db47ab1e32eb58ffc02, type: 3}
+  range: 0
+  bulletSpreadAngle: 0.1
+  bulletHole: {fileID: 0}
+  dryFireClip: {fileID: 0}
+  cartridge: {fileID: 0}
+  isRPG: 0
+  projectilePrefab: {fileID: 0}
+  isFlameThrower: 1
+  isMeleeWeapon: 0

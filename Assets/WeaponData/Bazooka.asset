@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e9ebaa231cc0145bb2f69ebfaccd8e, type: 3}
+  m_Name: Bazooka
+  m_EditorClassIdentifier: 
+  offset: {x: 0.088, y: -0.205, z: 0.139}
+  weaponName: Bazooka
+  ammoType: 4
+  fireType: 0
+  weaponType: 3
+  reloadTime: 4
+  fireTime: 1
+  maxAmmo: 1
+  damage: 100
+  fireClip: {fileID: 8300000, guid: bbe571f64e3d870459dd5484465c07d4, type: 3}
+  reloadClip: {fileID: 8300000, guid: 66d48b80db736db4083611894d43b56b, type: 3}
+  dropWeaponPrefab: {fileID: 158284, guid: fb9f17a1ae18a7048a1eeba928770973, type: 3}
+  range: 0
+  bulletSpreadAngle: 0
+  bulletHole: {fileID: 0}
+  dryFireClip: {fileID: 0}
+  cartridge: {fileID: 0}
+  isRPG: 1
+  projectilePrefab: {fileID: 100000, guid: e755f453ea5982047abf39e0711b9bff, type: 3}
+  isFlameThrower: 0
+  isMeleeWeapon: 0
