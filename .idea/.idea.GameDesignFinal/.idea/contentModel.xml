@@ -289,6 +289,13 @@
           </e>
           <e p="PlayerManager.cs" t="Include" />
           <e p="PlayerMover.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="BasePanel.cs" t="Include" />
+            <e p="PlayingPanel.cs" t="Include" />
+            <e p="StartMenuPanel.cs" t="Include" />
+            <e p="UILoadPath.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
+          </e>
           <e p="WeaponSystem" t="Include">
             <e p="BulletHoleLife.cs" t="Include" />
             <e p="CartridgeLife.cs" t="Include" />

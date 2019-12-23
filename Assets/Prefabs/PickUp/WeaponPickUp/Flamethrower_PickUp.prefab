@@ -78,7 +78,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 7172527868806477310, guid: 779af49dd782cec4896d314ca7753209, type: 3}
   ammoAmount: 250
-  ammoType: 3
 --- !u!54 &7039709294026757532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -161,6 +160,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -253,6 +253,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

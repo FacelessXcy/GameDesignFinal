@@ -23,6 +23,7 @@ public class WeaponData:ScriptableObject
     public AudioClip fireClip;
     public AudioClip reloadClip;
     public GameObject dropWeaponPrefab;
+    public Texture crosshair;
     [Header("普通枪械专用")]
     public float range;
     public float bulletSpreadAngle;

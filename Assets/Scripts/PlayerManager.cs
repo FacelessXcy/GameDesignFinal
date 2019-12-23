@@ -27,7 +27,6 @@ public class PlayerManager : MonoSingleton<PlayerManager>
         _audioSource.clip = takeDamageClip;
         _health.onDamaged += TakeDamage;
         _health.onDied += OnDie;
-        Debug.Log("Start");
     }
 
     private void Update()

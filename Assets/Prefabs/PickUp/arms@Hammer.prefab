@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2897273111589612389}
   - component: {fileID: 2897273111584045641}
-  m_Layer: 13
+  m_Layer: 18
   m_Name: sledge_hammer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,6 +116,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -356,6 +357,7 @@ MonoBehaviour:
   bulletHole: {fileID: 0}
   bulletSpreadAngle: 0
   projectilePrefab: {fileID: 0}
+  dropWeaponPrefab: {fileID: 0}
   owner: {fileID: 0}
 --- !u!1 &2897273111589254987
 GameObject:
@@ -478,6 +480,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

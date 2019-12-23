@@ -48,13 +48,45 @@ public class PlayerInput : MonoSingleton<PlayerInput>
     
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         mouseVertical = 0;
         mouseHorizontal = 0; 
     }
 
     private void Update()
     {
+
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if ( Cursor.lockState == CursorLockMode.None)
+        {
+            keyboardVertical = 0;
+            keyboardHorizontal = 0;
+            mouseHorizontal = 0;
+            mouseVertical = 0;
+            
+            jump = false;
+            leftFireDown = false;
+            leftFireHold = false;
+            leftFireUp = false;
+            reload = false;
+            build = false;
+            switchBuildSystem = false;
+            run = false;
+            changeWeapon1 = false;
+            changeWeapon2 = false;
+            changeWeapon3 = false;
+            changeWeapon4 = false;
+            return;
+        }
+
         _buttonBuild.Tick(Input.GetKey(keyBuild));
         _buttonJump.Tick(Input.GetButton("Jump"));
         _buttonFire.Tick(Input.GetButton("Fire1"));
