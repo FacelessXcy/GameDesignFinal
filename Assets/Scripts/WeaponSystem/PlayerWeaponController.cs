@@ -62,6 +62,7 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
         }
         SwitchWeapon(WeaponType.Melee);
         AddAmmoAmount(AmmoType.PistolAmmo, 11);
+        AddAmmoAmount(AmmoType.AssaultRifleAmmo, 1000);
     }
 
 

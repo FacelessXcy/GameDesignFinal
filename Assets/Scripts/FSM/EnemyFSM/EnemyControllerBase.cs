@@ -8,8 +8,18 @@ using Random = UnityEngine.Random;
 using UnityEditor;
 #endif
 
+
+public enum MonsterType
+{
+    SmallMelee,
+    SmallRange,
+    BigMelee,
+    BigRange
+}
+
 public class EnemyControllerBase : MonoBehaviour
 {
+    [HideInInspector] public bool isBoomMonster;
     [HideInInspector] public bool gameIsPaused;
     public bool isMeleeMonster;
     public float viewDistance;
@@ -20,8 +30,7 @@ public class EnemyControllerBase : MonoBehaviour
 
     public float atkDamage;
     public float attackRange;
-    [HideInInspector]
-    public Animator animator;
+    public Animator _animator;
     [HideInInspector]
     public NavMeshAgent navMeshAgent;
 
@@ -32,6 +41,7 @@ public class EnemyControllerBase : MonoBehaviour
     private MeleeWeaponCollider _meleeWeaponCollider;
     private AudioSource _audioSource;
     private EnemyFSMSystem _fsm;
+
     private Transform _player;
     public Transform Player => _player;
 
@@ -64,13 +74,15 @@ public class EnemyControllerBase : MonoBehaviour
     //Trigger Signal
     [HideInInspector]
     public bool isTakeDamadgeTrigger;
+
+    [HideInInspector] public bool isRespawn;
     [HideInInspector]
     public bool isDeadTrigger;
     //Animation Signal
     public bool Idle;
     public bool Attack;
     public bool TakeDamadge;
-
+    public bool isDead;
     private Transform _attackPoint;
     private Health _health;
     private float _takeDamageAnim;//播放受伤动画的最低承受伤害量
@@ -88,8 +100,17 @@ public class EnemyControllerBase : MonoBehaviour
         _attackPoint = transform.Find("AttackPoint");
         _audioSource = GetComponent<AudioSource>();
         _health = GetComponent<Health>();
-        animator = GetComponent<Animator>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        if (_animator==null)
+        {
+            //Debug.Log("_animator==null in Start",gameObject);
+            _animator = GetComponent<Animator>();
+        }
+
+        if (navMeshAgent==null)
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+        navMeshAgent.ResetPath();
         navMeshAgent.speed = walkSpeed;
         navMeshAgent.stoppingDistance = attackRange/1.2f;
         _attackIDs = new[] {_attackID1, _attackID2, _attackID3};
@@ -98,7 +119,10 @@ public class EnemyControllerBase : MonoBehaviour
         _health.onDamaged += OnDamaged;
         _takeDamageAnim = _health.maxHealth / 4;
         _currentTakeDamage = _takeDamageAnim - 0.1f;
-        MakeFSM();
+        if (_fsm==null)
+        {
+            MakeFSM(); 
+        }
         _viewLayerMask = ~(1 << LayerMask.NameToLayer("Enemy"));
     }
 
@@ -110,6 +134,10 @@ public class EnemyControllerBase : MonoBehaviour
             return;
         }
         AnimationCheck();
+//        if (_fsm.enabled)
+//        {
+//            Debug.Log("当前状态"+_fsm.CurrentState,gameObject);
+//        }
         _fsm.Update(_player);
     }
 
@@ -151,11 +179,24 @@ public class EnemyControllerBase : MonoBehaviour
         smallEnemyTakeDamage.AddTransition(
             Transition.TakeDamadgeToIdle, StateID.SmallIdle);
         SmallEnemyDeadState smallEnemyDead=new SmallEnemyDeadState(_fsm);
-        
-        
-        _fsm.AddStates(smallEnemyRelax,smallEnemyIdle,smallEnemyChase,
-        smallEnemyAttack,smallEnemyTakeDamage,smallEnemyDead);
-        
+        smallEnemyDead.AddTransition(Transition.DeadToIdle,StateID.SmallIdle);
+        if (_animator==null)
+        {
+            _animator = GetComponent<Animator>();
+        }
+
+        if (isBoomMonster)
+        {
+            _fsm.AddStates(smallEnemyIdle,smallEnemyChase,
+                smallEnemyAttack,smallEnemyTakeDamage,smallEnemyDead);
+        }
+        else
+        {
+            _fsm.AddStates(smallEnemyRelax,smallEnemyIdle,smallEnemyChase,
+                smallEnemyAttack,smallEnemyTakeDamage,smallEnemyDead);
+        }
+
+
     }
     
     public Vector3 GetVelDir()
@@ -167,49 +208,53 @@ public class EnemyControllerBase : MonoBehaviour
 
     public void SetChaseBool(bool value)
     {
-        animator.SetBool(_runID,value);
+        _animator.SetBool(_runID,value);
     }
 
     public void SetTakeDamadgeTrigger()
     {
-        animator.SetTrigger(_takeDamadgeID);   
+        _animator.SetTrigger(_takeDamadgeID);   
     }
 
     public void SetAttackTrigger()
     {
         if (isMeleeMonster)
         {
-            animator.SetTrigger(_attackIDs[Random.Range(0,3)]);
+            _animator.SetTrigger(_attackIDs[Random.Range(0,3)]);
         }
         else
         {
-            animator.SetTrigger(_rangedAttackID);
+            _animator.SetTrigger(_rangedAttackID);
         }
     }
     
 
     public void SetDeadTrigger()
     {
-        animator.SetTrigger(_deadID);
+        _animator.SetTrigger(_deadID);
     }
 
     public void SetRelaxBool(bool value)
     {
-        animator.SetBool(_relaxID,value);
+        _animator.SetBool(_relaxID,value);
     }
 
     private void AnimationCheck()
     {
 
-        Idle = animator.GetCurrentAnimatorStateInfo(0).IsName("Idle");
-        Attack = animator.GetCurrentAnimatorStateInfo(0)
+        Idle = _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle");
+        Attack = _animator.GetCurrentAnimatorStateInfo(0)
             .IsTag("Attack");
-        TakeDamadge = animator.GetCurrentAnimatorStateInfo(0)
+        TakeDamadge = _animator.GetCurrentAnimatorStateInfo(0)
             .IsName("Take Damage");
     }
 
     public bool SeePlayer(Vector3 target)
     {
+        if (isBoomMonster)
+        {
+            return true;
+        }
         if (Vector3.Angle(transform.forward,target-transform.position)
         <=viewAngle)
         {
@@ -228,6 +273,10 @@ public class EnemyControllerBase : MonoBehaviour
 
     public bool FeelPlayer(Vector3 target)
     {
+        if (isBoomMonster)
+        {
+            return true;
+        }
         if (Vector3.Distance(target,transform.position)<=3*viewDistance)
         {
             return true;
@@ -277,8 +326,15 @@ public class EnemyControllerBase : MonoBehaviour
     {
         isDeadTrigger = true;
         GetComponent<CapsuleCollider>().enabled = false;
-        
-        Destroy(this.gameObject,5.0f);
+        isDead = true;
+        if (isBoomMonster)
+        {
+            EnemyManager.Instance.Recycle(this);
+        }
+        else
+        {
+            Destroy(gameObject,3);
+        }
     }
 
     public void OnDamaged(float realDamageAmount,GameObject damageSource)
@@ -331,10 +387,12 @@ public class EnemyControllerBase : MonoBehaviour
         else
         {
             _currentProjectile=Instantiate(projectilePrefab, _attackPoint.position,
-                    Quaternion.LookRotation((_player.position+_player.up)
+                    Quaternion.LookRotation((_player.position+_player
+                    .up*1.2f)
                     -_attackPoint.position)).GetComponent<Projectile>();
             _currentProjectile.explosionPrefab=explosionPrefab;
-            _currentProjectile.transform.localScale *= 4;
+            _currentProjectile.transform.localScale *= transform
+            .localScale.x;
             _currentProjectile.source = this.gameObject;
         }
     }
@@ -389,4 +447,20 @@ public class EnemyControllerBase : MonoBehaviour
     {
         _audioSource.PlayOneShot(footStep);
     }
+
+    public void Respawn()
+    {
+        if (isDead)
+        {
+            isRespawn = true;
+            isDead = false;
+            isDeadTrigger = false;
+            GetComponent<CapsuleCollider>().enabled = true;
+            _fsm.enabled = true;
+            isBoomMonster = true;
+            GetComponent<Health>().Respawn();
+            _animator.SetTrigger("Respawn");
+        }
+    }
+
 }

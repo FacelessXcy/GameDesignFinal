@@ -61,7 +61,6 @@ public class Projectile : MonoBehaviour
 		if ((colliderLayerMask&(int)Mathf.Pow(2,collision.gameObject
 		.layer))!=Mathf.Pow(2,collision.gameObject.layer))
 		{
-			Debug.Log(collision.gameObject.name);
 			return;
 		}
 		if (isMonsterProjectile)

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdedb5e951697e046a41d98608704b7c, type: 3}
+  m_Name: EnemyResourcePath
+  m_EditorClassIdentifier: 
+  monsterPath:
+  - monsterType: 2
+    path: Monster/Big_Melee_1
+  - monsterType: 2
+    path: Monster/Big_Melee_2
+  - monsterType: 3
+    path: Monster/Big_Range_1
+  - monsterType: 0
+    path: Monster/Small_Melee_1
+  - monsterType: 0
+    path: Monster/Small_Melee_2
+  - monsterType: 1
+    path: Monster/Small_Range_1

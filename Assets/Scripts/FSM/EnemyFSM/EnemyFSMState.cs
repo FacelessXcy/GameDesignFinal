@@ -34,7 +34,8 @@ public enum Transition
     TakeDamadgeToIdle,
     RelaxToIdle,
     RelaxToTakeDamadge,
-    RelaxToDead
+    RelaxToDead,
+    DeadToIdle
     
 }
 public abstract class EnemyFSMState

@@ -533,6 +533,8 @@ public class Weapon : MonoBehaviour
         _ray.origin = _fpsCamera.transform.position;
         _ray.direction = _tempShootDirection;
         //枪口火光,以及弹道拖尾
+        Debug.DrawRay(_fpsCamera.transform.position,
+        _tempShootDirection*range,Color.black,2);
         _weaponComponent.Fire(_tempShootDirection,cartridge);
         if (Physics.Raycast(_ray,out _hit,range))
         {

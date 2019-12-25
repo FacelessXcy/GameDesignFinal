@@ -26,7 +26,6 @@ public class EnemyFSMSystem
         {
             return;
         }
-        //Debug.Log("当前状态" +_currentState.StateID);
         _currentState.Reason(player);
         _currentState.Act(player);
     }

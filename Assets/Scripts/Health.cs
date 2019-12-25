@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     public UnityAction<float, GameObject> onDamaged;
     public UnityAction<float> onHealed;
     public UnityAction onDied;
-
+    
     private float _healthBeforeHeal;
     private float _realHealingAmount;
 
@@ -79,5 +79,9 @@ public class Health : MonoBehaviour
         }
     }
 
-
+    public void Respawn()
+    {
+        _isDead = false;
+        currentHealth = maxHealth;
+    }
 }
