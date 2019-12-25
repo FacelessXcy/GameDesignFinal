@@ -9,7 +9,8 @@ using UnityEditor;
 
 public class PlayerMover : MonoSingleton<PlayerMover>
 {
-
+    [HideInInspector]public bool gameIsPaused;
+    
     #region public 
 
     public float jumpHeight;
@@ -64,6 +65,13 @@ public class PlayerMover : MonoSingleton<PlayerMover>
 
     private void Update()
     {
+        if (gameIsPaused)
+        {
+            _mouseVertical = 0;
+            _mouseHorizontal = 0;
+            return;
+        }
+        
         _isGround=_characterController.SimpleMove(Vector3.zero);
         if (_isGround)
         {

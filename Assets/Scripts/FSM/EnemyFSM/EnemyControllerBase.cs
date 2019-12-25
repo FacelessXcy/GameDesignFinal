@@ -10,6 +10,7 @@ using UnityEditor;
 
 public class EnemyControllerBase : MonoBehaviour
 {
+    [HideInInspector] public bool gameIsPaused;
     public bool isMeleeMonster;
     public float viewDistance;
     [Range(0,90)]
@@ -32,9 +33,6 @@ public class EnemyControllerBase : MonoBehaviour
     private AudioSource _audioSource;
     private EnemyFSMSystem _fsm;
     private Transform _player;
-
-    
-    
     public Transform Player => _player;
 
     private int _runID = Animator.StringToHash("Giant Run");
@@ -107,6 +105,10 @@ public class EnemyControllerBase : MonoBehaviour
 
     private void Update()
     {
+        if (gameIsPaused)
+        {
+            return;
+        }
         AnimationCheck();
         _fsm.Update(_player);
     }

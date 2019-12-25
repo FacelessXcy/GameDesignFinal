@@ -260,6 +260,7 @@
           </e>
           <e p="CameraController.cs" t="Include" />
           <e p="Damageable.cs" t="Include" />
+          <e p="EnemyManager.cs" t="Include" />
           <e p="FSM" t="Include">
             <e p="EnemyFSM" t="Include">
               <e p="EnemyControllerBase.cs" t="Include" />
@@ -280,6 +281,7 @@
             <e p="MyTimer.cs" t="Include" />
             <e p="PlayerInput.cs" t="Include" />
           </e>
+          <e p="LoadingScene.cs" t="Include" />
           <e p="MonoSingleton.cs" t="Include" />
           <e p="PickUp" t="Include">
             <e p="AmmoPickUp.cs" t="Include" />
@@ -289,8 +291,10 @@
           </e>
           <e p="PlayerManager.cs" t="Include" />
           <e p="PlayerMover.cs" t="Include" />
+          <e p="SceneLoadingManager.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="BasePanel.cs" t="Include" />
+            <e p="PausedMenuPanel.cs" t="Include" />
             <e p="PlayingPanel.cs" t="Include" />
             <e p="StartMenuPanel.cs" t="Include" />
             <e p="UILoadPath.cs" t="Include" />

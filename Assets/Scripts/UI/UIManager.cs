@@ -15,7 +15,7 @@ public enum UIType
 public class UIManager : MonoSingleton<UIManager>
 {
     public UILoadPath[] uiLoadPath;
-
+    public UIType awakeLoadUI;
     private Canvas _canvas;
     //保存UIPrefab加载路径
     private Dictionary<UIType, string> _panelPathDic=new Dictionary<UIType, string>();
@@ -33,7 +33,7 @@ public class UIManager : MonoSingleton<UIManager>
 
     private void Start()
     {
-        PushPanel(UIType.StartMenuUI);
+        PushPanel(awakeLoadUI);
     }
 
     //页面入栈，位于栈顶，显示
@@ -43,13 +43,35 @@ public class UIManager : MonoSingleton<UIManager>
         {
             _panelStack=new Stack<BasePanel>();
         }
+
+        if (_panelStack.Count>0)
+        {
+            _panelStack.Peek().OnPaused();
+        }
+        
         BasePanel panel = GetPanel(uiType);
+        panel.OnEnter();
         _panelStack.Push(panel);
     }
     //页面出栈，隐藏
     public void PopPanel()
     {
-        
+        if (_panelStack==null)
+        {
+            _panelStack=new Stack<BasePanel>();
+        }
+
+        if (_panelStack.Count<=0)
+        {
+            return;
+        }
+        _panelStack.Pop().OnExit();
+
+        if (_panelStack.Count<=0)
+        {
+            return;
+        }
+        _panelStack.Peek().OnResume();
     }
 
 
@@ -66,9 +88,9 @@ public class UIManager : MonoSingleton<UIManager>
             {
                 if (pair.Key==uiType)
                 {
-                    Debug.Log(pair.Value+"路径");
-                    Debug.Log(Resources.Load<GameObject>(pair.Value)
-                    ==null);
+//                    Debug.Log(pair.Value+"路径");
+//                    Debug.Log(Resources.Load<GameObject>(pair.Value)
+//                    ==null);
                     GameObject tempPanel = Instantiate(Resources.Load<GameObject>(pair.Value));
                     tempPanel.transform.SetParent(_canvas.transform,false);
                     _panelDic.Add(pair.Key,tempPanel.GetComponent<BasePanel>());

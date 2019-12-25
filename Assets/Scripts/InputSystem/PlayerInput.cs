@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class PlayerInput : MonoSingleton<PlayerInput>
 {
-
+    [HideInInspector] public bool gameIsPaused;
     [Header("===== Key Settings=====")]
     public string keyBuild;
     public string keyReload;
@@ -55,37 +55,12 @@ public class PlayerInput : MonoSingleton<PlayerInput>
 
     private void Update()
     {
-
-        if (Input.GetKey(KeyCode.LeftAlt))
+        if (gameIsPaused)
         {
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        if ( Cursor.lockState == CursorLockMode.None)
-        {
-            keyboardVertical = 0;
-            keyboardHorizontal = 0;
-            mouseHorizontal = 0;
-            mouseVertical = 0;
-            
-            jump = false;
-            leftFireDown = false;
-            leftFireHold = false;
-            leftFireUp = false;
-            reload = false;
-            build = false;
-            switchBuildSystem = false;
-            run = false;
-            changeWeapon1 = false;
-            changeWeapon2 = false;
-            changeWeapon3 = false;
-            changeWeapon4 = false;
+            ResetSignal();
             return;
         }
+        
 
         _buttonBuild.Tick(Input.GetKey(keyBuild));
         _buttonJump.Tick(Input.GetButton("Jump"));
@@ -118,4 +93,27 @@ public class PlayerInput : MonoSingleton<PlayerInput>
         changeWeapon4 = _buttonChangeWeapon4.onPressed;
 
     }
+
+
+    private void ResetSignal()
+    {
+        keyboardVertical = 0;
+        keyboardHorizontal = 0;
+        mouseHorizontal = 0;
+        mouseVertical = 0;
+            
+        jump = false;
+        leftFireDown = false;
+        leftFireHold = false;
+        leftFireUp = false;
+        reload = false;
+        build = false;
+        switchBuildSystem = false;
+        run = false;
+        changeWeapon1 = false;
+        changeWeapon2 = false;
+        changeWeapon3 = false;
+        changeWeapon4 = false;
+    }
+
 }

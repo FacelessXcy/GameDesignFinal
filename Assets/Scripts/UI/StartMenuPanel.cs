@@ -10,8 +10,9 @@ public class StartMenuPanel : BasePanel
     private Button _startBtn;
     private Button _exitBtn;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         _startBtn = transform.Find("StartGameBtn")
             .GetComponent<Button>();
         _exitBtn= transform.Find("ExitGameBtn")
@@ -19,17 +20,30 @@ public class StartMenuPanel : BasePanel
         
         _startBtn.onClick.AddListener(() =>
         {
-            OnPushPanel(UIType.PlayingUI);
+            SceneLoadingManager.Instance.LoadNewScene("SampleScene");
         });
-        Debug.Log("_startBtn.onClick.AddListener");
-        
+        _exitBtn.onClick.AddListener(Application.Quit);
     }
 
-
-    public void OnPushPanel(UIType uiType)
+    public override void OnEnter()
     {
-        Debug.Log("Click");
-        UIManager.Instance.PushPanel(uiType);
+        base.OnEnter();
+        Cursor.lockState = CursorLockMode.None;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1;
     }
+
+    public override void OnPaused()
+    {
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = 0;
+    }
+
+    public override void OnResume()
+    {
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1;
+    }
+    
 
 }

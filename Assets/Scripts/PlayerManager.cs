@@ -8,6 +8,9 @@ using UnityEditor;
 
 public class PlayerManager : MonoSingleton<PlayerManager>
 {
+    [HideInInspector]
+    public bool gameIsPaused;
+    
     public AudioClip takeDamageClip;
     public AudioClip deadClip;
     
@@ -31,6 +34,10 @@ public class PlayerManager : MonoSingleton<PlayerManager>
 
     private void Update()
     {
+        if (gameIsPaused)
+        {
+            return;
+        }
         if (!hasInit)
         {
             CloseBuildSystem();

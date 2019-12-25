@@ -19,7 +19,7 @@ public enum BuildPos
 
 public class BuildingSystem : MonoSingleton<BuildingSystem>
 {
-    
+    [HideInInspector] public bool gameIsPaused;
     public float rotateSpeed;
     [FormerlySerializedAs("virtualBuilding")] public GameObject virtualBuildingGo;
     [FormerlySerializedAs("entityBuilding")] public GameObject entityBuildingGo;
@@ -55,7 +55,7 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
 
     private void Update()
     {
-        if (!isOpen)
+        if (!isOpen||gameIsPaused)
         {
             return;
         }

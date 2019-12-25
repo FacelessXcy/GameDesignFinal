@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class CameraController : MonoBehaviour
 {
-
+    
     private float _xRotation=0;
     
 

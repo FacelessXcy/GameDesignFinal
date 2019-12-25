@@ -23,6 +23,8 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
     }
     [HideInInspector]
     public bool isOpen;
+    [HideInInspector]
+    public bool gameIsPaused;
     [SerializeField]
     //private Weapon[] _weaponSlots=new Weapon[4];
     private Dictionary<WeaponType,Weapon> _weapons=new Dictionary<WeaponType, Weapon>();
@@ -65,10 +67,14 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
 
     private void Update()
     {
-        if (!isOpen)
+        if (!isOpen||gameIsPaused)
         {
+            bulletAudio.mute = true;
+            flameThrowerAudio.mute = true;
             return;
         }
+        bulletAudio.mute = false;
+        flameThrowerAudio.mute = false;
         Debug.DrawRay(transform.position,transform.forward.normalized*10.0f);
         currentWeapon = GetCurrentWeapon();
         if (currentWeapon!=null)
