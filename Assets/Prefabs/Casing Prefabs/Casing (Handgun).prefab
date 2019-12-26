@@ -69,6 +69,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -223,9 +224,9 @@ MonoBehaviour:
   minimumYForce: 18
   maximumYForce: 35
   casingSounds:
-  - {fileID: 8300000, guid: 39a52c8570aa5ee4b8c76570a3eda151, type: 3}
-  - {fileID: 8300000, guid: a422bb42207b84543bfa921cf5ad09d2, type: 3}
-  - {fileID: 8300000, guid: 031057f31153d6e4da071a851d29e9e2, type: 3}
-  - {fileID: 8300000, guid: 13f0d2cf3fe7b1744ada35cb7c1e1a4b, type: 3}
-  - {fileID: 8300000, guid: 3f8b82312021c504f8a6212dddba71f3, type: 3}
+  - {fileID: 8300000, guid: faeea80701450fc459fbf9f0add1b39e, type: 3}
+  - {fileID: 8300000, guid: 7b992859b0b02c3459f186304ac1387c, type: 3}
+  - {fileID: 8300000, guid: 2436635123c3d9b4280956f104371720, type: 3}
+  - {fileID: 8300000, guid: 1f66856061b44044cb6d6a2529a47639, type: 3}
+  - {fileID: 8300000, guid: 54b0c015e855f5948b4e511f1e0f51a5, type: 3}
   audioSource: {fileID: 0}

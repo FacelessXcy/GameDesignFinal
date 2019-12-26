@@ -20,7 +20,7 @@ public class StartMenuPanel : BasePanel
         
         _startBtn.onClick.AddListener(() =>
         {
-            SceneLoadingManager.Instance.LoadNewScene("SampleScene");
+            SceneLoadingManager.Instance.LoadNewScene("Demo_City",null,"测试文字");
         });
         _exitBtn.onClick.AddListener(Application.Quit);
     }

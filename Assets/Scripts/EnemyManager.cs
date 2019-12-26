@@ -29,8 +29,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         LoadEnemyResource();
         _boomEnemysPool=new SimpleObjectPool<EnemyControllerBase>
-        (FactoryMethod,null,100);
-        for (int i = 0; i < 100; i++)
+        (FactoryMethod,null,30);
+        for (int i = 0; i < 30; i++)
         {
             AllocateMonster();
         }

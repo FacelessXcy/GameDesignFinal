@@ -39,43 +39,7 @@
             </e>
           </e>
         </e>
-        <e p="Low Poly FPS Pack" t="Include">
-          <e p="Components" t="Include">
-            <e p="Demo Scene" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="AimScript.cs" t="Include" />
-                <e p="DebrisScript.cs" t="Include" />
-                <e p="ExplosiveBarrelScript.cs" t="Include" />
-                <e p="FlashbangEffectScript.cs" t="Include" />
-                <e p="GasTankScript.cs" t="Include" />
-                <e p="GunSwitchScript.cs" t="Include" />
-                <e p="LightMovementScript.cs" t="Include" />
-                <e p="LightningScript.cs" t="Include" />
-                <e p="TargetScript.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Scripts" t="Include">
-              <e p="ArmControllerScript.cs" t="Include" />
-              <e p="Casings &amp; Mags" t="Include">
-                <e p="CasingScript.cs" t="Include" />
-                <e p="GrenadeScript.cs" t="Include" />
-                <e p="ProjectileScript.cs" t="Include" />
-              </e>
-              <e p="Explosion &amp; Impact" t="Include">
-                <e p="ExplosionScript.cs" t="Include" />
-                <e p="ImpactScript.cs" t="Include" />
-              </e>
-              <e p="Mecanim" t="Include">
-                <e p="PlaySoundScript.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-        </e>
         <e p="Low Poly Ultimate Pack" t="Include">
-          <e p="- Scripts" t="Include">
-            <e p="CameraSmooth.cs" t="Include" />
-            <e p="Move.cs" t="Include" />
-          </e>
           <e p="Standard Assets" t="Include">
             <e p="Effects" t="Include">
               <e p="GlassRefraction" t="Include">
