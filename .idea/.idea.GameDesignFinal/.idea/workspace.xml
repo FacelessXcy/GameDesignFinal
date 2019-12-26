@@ -15,17 +15,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyTakeDamageState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUp/WeaponPickUp.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingSystem/BuildingSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Xcy/Utility/SimpleObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StylizedExplosionPack/scripts/destroyMe.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Low Poly Ultimate Pack/Standard Assets/Effects/ImageEffects/Scripts/Blur.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUp/AmmoPickUp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Utility/CurveControlledBob.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Utility/FOVKick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/81/aab0b849/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/WeaponData/WeaponData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,8 +72,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Xcy/FSM/FSMSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Xcy/FSM/FSMState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89A51479-21E5-48D1-B8DD-CFF8078F62CD/9a/1f51fe4a/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Scripts/Water.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/2D/Scripts/PlatformerCharacter2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentFlameThrower.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -114,15 +108,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayingPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyResourceLoad/EnemyResource.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyResourceLoad/MonsterResource.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyFSMSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyFSMState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyDeadState.cs" />
@@ -133,7 +123,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoadingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LoadingScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayingPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartMenuPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInput.cs" />
       </list>
     </option>
   </component>
@@ -215,6 +209,7 @@
       <workItem from="1577290198557" duration="620000" />
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
+      <workItem from="1577378671058" duration="2455000" />
     </task>
     <servers />
   </component>

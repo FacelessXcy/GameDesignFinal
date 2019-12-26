@@ -29,6 +29,7 @@ public class StartMenuPanel : BasePanel
     {
         base.OnEnter();
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1;
     }

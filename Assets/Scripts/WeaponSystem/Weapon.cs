@@ -566,7 +566,7 @@ public class Weapon : MonoBehaviour
     private void ShootFlame()
     {
         (_weaponComponent as WeaponComponentFlameThrower).sourceWeapon = this;
-        _weaponComponent.Fire(Vector3.zero,null);
+        _weaponComponent.Fire(Vector3.zero,null); 
     }
 
     private void ShootRPG()

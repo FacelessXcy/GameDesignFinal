@@ -18,18 +18,20 @@ public class PlayingPanel : BasePanel
     {
         base.OnEnter();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         inThisPanel = true;
     }
 
     public override void OnPaused()
     {
         inThisPanel = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public override void OnResume()
     {
         inThisPanel = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     
 }

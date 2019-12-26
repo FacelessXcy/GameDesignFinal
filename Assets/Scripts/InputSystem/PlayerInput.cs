@@ -50,8 +50,9 @@ public class PlayerInput : MonoSingleton<PlayerInput>
     {
         //Cursor.lockState = CursorLockMode.Locked;
         mouseVertical = 0;
-        mouseHorizontal = 0; 
-    }
+        mouseHorizontal = 0;
+        Application.targetFrameRate = 60;
+    } 
 
     private void Update()
     {

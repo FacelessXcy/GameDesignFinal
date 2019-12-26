@@ -23,6 +23,7 @@ public class PausedMenuPanel : BasePanel
     {
         base.OnEnter();
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts=true;
         GameManager.Instance.PauseGame();
@@ -42,6 +43,8 @@ public class PausedMenuPanel : BasePanel
 
     public override void OnExit()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts=false;
     }
