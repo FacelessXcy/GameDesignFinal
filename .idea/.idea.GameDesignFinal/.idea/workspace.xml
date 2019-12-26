@@ -106,7 +106,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/HealthPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentMelee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentFlameThrower.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/MeleeWeaponCollider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentSimpleGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/WeaponPickUp.cs" />
@@ -140,6 +139,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/MeleeWeaponCollider.cs" />
       </list>
     </option>
   </component>
@@ -218,6 +218,7 @@
       <workItem from="1577081842585" duration="780000" />
       <workItem from="1577100993181" duration="10624000" />
       <workItem from="1577263736756" duration="22945000" />
+      <workItem from="1577290198557" duration="620000" />
     </task>
     <servers />
   </component>
