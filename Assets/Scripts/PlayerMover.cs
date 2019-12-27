@@ -48,6 +48,9 @@ public class PlayerMover : MonoSingleton<PlayerMover>
     private bool _isGround;
     private bool _lastFrameIsGround;
     private CharacterController _characterController;
+    private bool _realInGround;
+    private float _inGroundMaxTime=0.2f;
+    private float _inGroundCurrentTime;
     
     #endregion
     
@@ -73,6 +76,19 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         }
         
         _isGround=_characterController.SimpleMove(Vector3.zero);
+        if (!_isGround)
+        {
+            _inGroundCurrentTime += Time.deltaTime;
+            if (_inGroundCurrentTime>=_inGroundMaxTime)
+            {
+                _realInGround = false;
+            }
+        }
+        else
+        {
+            _inGroundCurrentTime = 0.0f;
+            _realInGround = true;
+        }
         if (_isGround)
         {
             _velY.y = 0;
@@ -82,7 +98,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         HandleMove();
         SoundPlay();
         
-        _lastFrameIsGround = _isGround;
+        _lastFrameIsGround = _realInGround;
     }
 
     private void GetInput()
@@ -106,7 +122,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         _tempMoveDir = (transform.forward * _walkForwardOrBack + 
                         transform.right * _walkRightOrLeft).normalized;
         //Handle跳跃
-        if (_isGround&&PlayerInput.Instance.jump)
+        if (_realInGround&&PlayerInput.Instance.jump)
         {
             _velY.y = Mathf.Sqrt(2 * 9.8f * jumpHeight);
             isJump = true;
@@ -120,7 +136,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         _velY.y += -9.8f * Time.deltaTime;
         _characterController.Move(_tempMoveDir *_multiSpeed* walkSpeed *
                                   Time.deltaTime+_velY * Time.deltaTime);
-        if (_isGround)
+        if (_realInGround)
         {
             //脚步声音循环判定
             if (_walkRightOrLeft!=0||_walkForwardOrBack!=0)
@@ -136,16 +152,16 @@ public class PlayerMover : MonoSingleton<PlayerMover>
 
     private void SoundPlay()
     {
-        if (_lastFrameIsGround!=_isGround)
+        if (_lastFrameIsGround!=_realInGround)
         {
-            if (_isGround)
+            if (_realInGround)
             {
                 _audioSource.PlayOneShot(landClip);
                 //Debug.Log("Play landClip");
             }
         }
 
-        if (_isGround&&_currentFootStepDis>=footClipPlayStep)
+        if (_realInGround&&_currentFootStepDis>=footClipPlayStep)
         {
             _currentFootStepDis = 0;
             _audioSource.PlayOneShot(footStepClips[Random.Range(0,

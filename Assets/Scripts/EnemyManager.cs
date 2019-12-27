@@ -52,7 +52,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         {
             //每9个近战小怪生成1个近战大怪 
             temp=Instantiate(_bigMelee[UnityEngine.Random.Range
-                    (0,_smallRange.Count)], 
+                    (0,_bigMelee.Count)], 
                 currentInstantiatePos.position,
                 Quaternion.identity, transform);
             
@@ -60,20 +60,21 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         {
             //每12个近战小怪生成1个远程大怪 
             temp=Instantiate(_bigRange[UnityEngine.Random.Range
-                    (0,_smallRange.Count)], 
+                    (0,_bigRange.Count)], 
                 currentInstantiatePos.position,
                 Quaternion.identity, transform);
         }else
         {
             //生成近战小怪
             temp=Instantiate(_smallMelee[UnityEngine.Random.Range
-                    (0,_smallRange.Count)], 
+                    (0,_smallMelee.Count)], 
                 currentInstantiatePos.position,
                 Quaternion.identity, transform);
         }
         
         _enemyCount++;
         temp.isBoomMonster = true;
+        _boomEnemys.Add(temp);
         temp.gameObject.SetActive(false);
         return temp;
     }
@@ -86,8 +87,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
                                       UnityEngine.Random.Range(-3,4),
                                       UnityEngine.Random.Range(-3,4),
                                       UnityEngine.Random.Range(-3,4));
-        temp.Respawn();
         temp.gameObject.SetActive(true);
+        temp.Respawn();
 //        Instantiate(_smallMelee[UnityEngine.Random.Range
 //                (0,_smallRange.Count)], 
 //            currentInstantiatePos.position+new Vector3(UnityEngine.Random.Range(-3,4),
@@ -108,6 +109,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         yield return new  WaitForSeconds(3f);
         _boomEnemysPool.Recycle(controllerBase);
+        _boomEnemys.Remove(controllerBase);
         controllerBase.gameObject.SetActive(false);
     }
 
