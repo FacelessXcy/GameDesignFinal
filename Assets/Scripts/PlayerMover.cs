@@ -51,7 +51,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
     private bool _realInGround;
     private float _inGroundMaxTime=0.2f;
     private float _inGroundCurrentTime;
-    private float _lastLeaveGroundMaxY;
+    private float _lastLeaveGroundMaxY=0.0f;
     #endregion
     
 
@@ -92,6 +92,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         {
             if (_lastLeaveGroundMaxY-transform.position.y>=5)
             {
+                Debug.Log("摔死");
                 GetComponent<Health>().Kill();
             }
             _inGroundCurrentTime = 0.0f;
@@ -178,4 +179,11 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.gameObject.layer==LayerMask.NameToLayer("DeadZone"))
+        {
+            GetComponent<Health>().Kill();
+        }
+    }
 }

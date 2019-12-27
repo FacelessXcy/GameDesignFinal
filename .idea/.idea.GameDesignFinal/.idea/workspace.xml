@@ -60,6 +60,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyFSMSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyRelaxState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Damageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DeadZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyIdleState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/MeleeWeaponCollider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -77,7 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponCollider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyRelaxState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/CartridgeLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingSystem/RealBuilding.cs" />
@@ -127,6 +127,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DeadZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMover.cs" />
       </list>
     </option>
@@ -209,7 +210,7 @@
       <workItem from="1577290198557" duration="620000" />
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
-      <workItem from="1577378671058" duration="12102000" />
+      <workItem from="1577378671058" duration="14472000" />
     </task>
     <servers />
   </component>

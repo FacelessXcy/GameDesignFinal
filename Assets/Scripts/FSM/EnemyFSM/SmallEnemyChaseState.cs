@@ -44,14 +44,14 @@ public class SmallEnemyChaseState : EnemyFSMState
             return;
         }
         //丢失目标
-        if (!_Fsm.character.FeelPlayer(player.position)&&
-            _Fsm.character.isInFightBool)
-        {
-            Debug.Log("丢失目标");
-            _Fsm.character.isInFightBool = false;
-            _Fsm.PerformTransition(Transition.ChaseToIdle);
-            return;
-        }
+//        if (!_Fsm.character.FeelPlayer(player.position)&&
+//            _Fsm.character.isInFightBool)
+//        {
+//            Debug.Log("丢失目标");
+//            _Fsm.character.isInFightBool = false;
+//            _Fsm.PerformTransition(Transition.ChaseToIdle);
+//            return;
+//        }
         //攻击目标
         if (_Fsm.character.IsInAttackRange(player.position))
         {

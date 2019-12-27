@@ -192,6 +192,7 @@
           </e>
           <e p="CameraController.cs" t="Include" />
           <e p="Damageable.cs" t="Include" />
+          <e p="DeadZone.cs" t="Include" />
           <e p="EnemyManager.cs" t="Include" />
           <e p="EnemyResourceLoad" t="Include">
             <e p="MonsterResource.cs" t="Include" />
