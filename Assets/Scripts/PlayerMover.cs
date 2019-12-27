@@ -51,7 +51,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
     private bool _realInGround;
     private float _inGroundMaxTime=0.2f;
     private float _inGroundCurrentTime;
-    
+    private float _lastLeaveGroundMaxY;
     #endregion
     
 
@@ -78,6 +78,10 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         _isGround=_characterController.SimpleMove(Vector3.zero);
         if (!_isGround)
         {
+            if (_lastLeaveGroundMaxY<=transform.position.y)
+            {
+                _lastLeaveGroundMaxY = transform.position.y;
+            }
             _inGroundCurrentTime += Time.deltaTime;
             if (_inGroundCurrentTime>=_inGroundMaxTime)
             {
@@ -86,14 +90,18 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         }
         else
         {
+            if (_lastLeaveGroundMaxY-transform.position.y>=5)
+            {
+                GetComponent<Health>().Kill();
+            }
             _inGroundCurrentTime = 0.0f;
             _realInGround = true;
         }
+        
         if (_isGround)
         {
             _velY.y = 0;
         }
-        
         GetInput();
         HandleMove();
         SoundPlay();
@@ -127,7 +135,6 @@ public class PlayerMover : MonoSingleton<PlayerMover>
             _velY.y = Mathf.Sqrt(2 * 9.8f * jumpHeight);
             isJump = true;
             _audioSource.PlayOneShot(jumpClip);
-            //Debug.Log("Jump");
         }
         else
         {
@@ -141,7 +148,7 @@ public class PlayerMover : MonoSingleton<PlayerMover>
             //脚步声音循环判定
             if (_walkRightOrLeft!=0||_walkForwardOrBack!=0)
             {
-                _currentFootStepDis += walkSpeed*_multiSpeed*0.01f;
+                _currentFootStepDis += walkSpeed*_multiSpeed*Time.deltaTime;
             }
         }
         else

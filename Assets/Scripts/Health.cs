@@ -67,6 +67,16 @@ public class Health : MonoBehaviour
         DeathHandle();
     }
 
+    public void Kill()
+    {
+        if (_isDead)
+        {
+            return;
+        }
+        currentHealth = 0;
+        DeathHandle();
+    }
+
     private void DeathHandle()
     {
         if (currentHealth<=0)
