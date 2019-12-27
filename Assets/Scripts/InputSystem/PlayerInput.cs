@@ -45,13 +45,17 @@ public class PlayerInput : MonoSingleton<PlayerInput>
     public bool changeWeapon2;
     public bool changeWeapon3;
     public bool changeWeapon4;
-    
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     private void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;
         mouseVertical = 0;
         mouseHorizontal = 0;
-        Application.targetFrameRate = 60;
     } 
 
     private void Update()

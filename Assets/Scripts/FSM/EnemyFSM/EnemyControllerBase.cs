@@ -326,6 +326,7 @@ public class EnemyControllerBase : MonoBehaviour
     {
         isDeadTrigger = true;
         GetComponent<CapsuleCollider>().enabled = false;
+        navMeshAgent.isStopped = true;
         isDead = true;
         if (isBoomMonster)
         {
@@ -458,6 +459,7 @@ public class EnemyControllerBase : MonoBehaviour
             GetComponent<CapsuleCollider>().enabled = true;
             _fsm.enabled = true;
             isBoomMonster = true;
+            navMeshAgent.isStopped = false;
             GetComponent<Health>().Respawn();
             _animator.SetTrigger("Respawn");
         }

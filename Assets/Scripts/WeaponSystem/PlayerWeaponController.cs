@@ -85,8 +85,10 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
             _hasReloaded =
                 currentWeapon.ReloadInput(_playerInput.reload);
             CheckChangeWeapon();
-
+            UIManager.Instance.SetAmmoAmount(currentWeapon.CurAmmo,
+            GetAmmoAmount(currentWeapon.ammoType));
         }
+        
     }
 
     private void InitWeaponDictionary()
@@ -293,6 +295,7 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
             CurrentWeaponType = weaponType;
             currentWeapon = GetCurrentWeapon();
             currentWeapon.gameObject.SetActive(true);
+            UIManager.Instance.SetCrosshair(currentWeapon.crosshair);
             currentWeapon.DrawWeapon();
             return true;
         }

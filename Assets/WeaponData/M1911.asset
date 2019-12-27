@@ -24,6 +24,7 @@ MonoBehaviour:
   fireClip: {fileID: 8300000, guid: 46afaa7e6cd245d4e8f6df7a0f1493f4, type: 3}
   reloadClip: {fileID: 8300000, guid: e2660f849dc65c945afef59835450936, type: 3}
   dropWeaponPrefab: {fileID: 0}
+  crosshair: {fileID: 21300000, guid: 665572f11e8122747b63e1642958f17e, type: 3}
   range: 100
   bulletSpreadAngle: 2
   bulletHole: {fileID: 100002, guid: 0ea03743e0d497c4bbfe3b70756dcc15, type: 3}

@@ -109,5 +109,16 @@ public class UIManager : MonoSingleton<UIManager>
             _panelPathDic.Add(path.uiType,path.uiPath);
         }
     }
+    
+    public void SetCrosshair(Sprite crosshair)
+    {
+        (GetPanel(UIType.PlayingUI) as PlayingPanel).SetCrosshair(crosshair);
+    }
+
+    public void SetAmmoAmount(int currentAmmo,int haveAmmo)
+    {
+        (GetPanel(UIType.PlayingUI) as PlayingPanel).SetAmmoAmount(currentAmmo,haveAmmo);
+    }
+    
 
 }

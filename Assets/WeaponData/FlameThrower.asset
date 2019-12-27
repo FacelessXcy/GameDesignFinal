@@ -20,11 +20,11 @@ MonoBehaviour:
   reloadTime: 8.5
   fireTime: 0.001
   maxAmmo: 250
-  damage: 10
+  damage: 15
   fireClip: {fileID: 8300000, guid: dfb7ff197734dd94b8142411d044df19, type: 3}
   reloadClip: {fileID: 8300000, guid: dc20fb9270680634ab77d731a3ffe48d, type: 3}
   dropWeaponPrefab: {fileID: 139972, guid: 6a8a971c9d4d6db47ab1e32eb58ffc02, type: 3}
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 21300000, guid: 29eb70d1d8081964e9350a7a4bd745a5, type: 3}
   range: 0
   bulletSpreadAngle: 0.1
   bulletHole: {fileID: 0}

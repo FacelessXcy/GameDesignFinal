@@ -51,6 +51,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public float bulletSpreadAngle;
     [HideInInspector] public GameObject projectilePrefab;
     [HideInInspector] public GameObject dropWeaponPrefab;
+    [HideInInspector] public Sprite crosshair;
     private float _fireTime;
     private float _reloadTime;
     private AudioClip _fireClip;
@@ -498,6 +499,7 @@ public class Weapon : MonoBehaviour
 
     private void InitData()
     {
+        crosshair = weaponData.crosshair;
         offset = weaponData.offset;
         isFlameThrower = weaponData.isFlameThrower;
         isRPG = weaponData.isRPG;
