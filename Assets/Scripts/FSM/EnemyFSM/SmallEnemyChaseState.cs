@@ -26,6 +26,7 @@ public class SmallEnemyChaseState : EnemyFSMState
     public override void DoBeforeLeaving()
     {
         _Fsm.character.SetChaseBool(false);
+        _Fsm.character.navMeshAgent.enabled = true;
     }
 
     public override void Reason(Transform player)
@@ -71,16 +72,47 @@ public class SmallEnemyChaseState : EnemyFSMState
     public override void Act(Transform player)
     {
         //Debug.Log("Set Forward  "+ _Fsm.character.GetVelDir());
-        _Fsm.character.navMeshAgent.SetDestination(player.position);
-        if (_Fsm.character.navMeshAgent.velocity!=Vector3.zero)
+        if (_Fsm.character.InTheRound(player.position))
         {
-            _Fsm.character.transform.forward = _Fsm.character.GetVelDir();
-        }
-        else
-        {
+            Debug.Log("InTheRound",_Fsm.character.gameObject);
+            if (_Fsm.character.navMeshAgent.enabled)
+            {
+                _Fsm.character.navMeshAgent.enabled = false;
+            }
+            if (!_Fsm.character.characterController.enabled)
+            {
+                _Fsm.character.characterController.enabled = true;
+            }
+            _Fsm.character.characterController.SimpleMove(
+                (player.position -
+                 _Fsm.character.transform.position).normalized * 4.2f);
             tempDir = player.position - _Fsm.character.transform.position;
             _Fsm.character.transform.forward = new Vector3(tempDir.x,
                 _Fsm.character.transform.forward.y,tempDir.z);
         }
+        else
+        {
+            if (!_Fsm.character.navMeshAgent.enabled)
+            {
+                _Fsm.character.navMeshAgent.enabled = true;
+            }
+            if (_Fsm.character.characterController.enabled)
+            {
+                _Fsm.character.characterController.enabled = false;
+            }
+            _Fsm.character.navMeshAgent.SetDestination(player.position);
+            if (_Fsm.character.navMeshAgent.velocity!=Vector3.zero)
+            {
+                _Fsm.character.transform.forward = _Fsm.character.GetVelDir();
+            }
+            else
+            {
+                tempDir = player.position - _Fsm.character.transform.position;
+                _Fsm.character.transform.forward = new Vector3(tempDir.x,
+                    _Fsm.character.transform.forward.y,tempDir.z);
+            }
+        }
+
+        
     }
 }

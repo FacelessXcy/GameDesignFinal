@@ -2674,6 +2674,7 @@ GameObject:
   - component: {fileID: 5143467801966540122}
   - component: {fileID: 5143467801966540123}
   - component: {fileID: 5143467801671193935}
+  - component: {fileID: 1250354741234296815}
   m_Layer: 16
   m_Name: Big_Melee_1
   m_TagString: Untagged
@@ -2886,6 +2887,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 139858, guid: 79981b93b118050439a3c046eea58f69, type: 3}
   explosionPrefab: {fileID: 4967936848768236099, guid: 3a3e22eba8dd36948a4b22f7ff985163,
     type: 3}
+  rigidbody: {fileID: 0}
   isInFightBool: 0
   isBeCarefulBool: 0
   isInDefend: 0
@@ -2940,6 +2942,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!143 &1250354741234296815
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145158692993043388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.73
+  m_Radius: 0.34
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &5145189352471702302
 GameObject:
   m_ObjectHideFlags: 0

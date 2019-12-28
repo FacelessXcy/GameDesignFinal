@@ -728,6 +728,7 @@ GameObject:
   - component: {fileID: 6771606647151800996}
   - component: {fileID: 1155171168756120146}
   - component: {fileID: 8055530054980424093}
+  - component: {fileID: 206349796624760535}
   m_Layer: 16
   m_Name: Small_Range_1
   m_TagString: Untagged
@@ -981,6 +982,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 139858, guid: 79981b93b118050439a3c046eea58f69, type: 3}
   explosionPrefab: {fileID: 4967936848768236099, guid: 3a3e22eba8dd36948a4b22f7ff985163,
     type: 3}
+  rigidbody: {fileID: 0}
   isInFightBool: 0
   isBeCarefulBool: 0
   isInDefend: 0
@@ -993,6 +995,24 @@ MonoBehaviour:
   isDead: 0
   _allHaveExplosion: []
   _currentExplosion: {fileID: 0}
+--- !u!143 &206349796624760535
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277788262598428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.75
+  m_Radius: 0.24
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &1638297627930488744
 GameObject:
   m_ObjectHideFlags: 0

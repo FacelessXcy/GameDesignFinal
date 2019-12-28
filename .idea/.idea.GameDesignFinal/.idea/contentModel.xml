@@ -230,6 +230,7 @@
             <e p="BuildingPickUp.cs" t="Include" />
             <e p="HealthPickUp.cs" t="Include" />
             <e p="PickUpItem.cs" t="Include" />
+            <e p="PickUpSubManager.cs" t="Include" />
             <e p="WeaponPickUp.cs" t="Include" />
           </e>
           <e p="PlayerManager.cs" t="Include" />

@@ -35,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputSystem/MyTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentSimpleGun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UILoadPath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpSubManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentRPG.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,15 +85,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickUpItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentMelee.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentFlameThrower.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentSimpleGun.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/WeaponPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/AmmoPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyIdleState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UILoadPath.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" />
@@ -105,21 +102,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DeadZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyChaseState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingSystem/BuildingSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/BuildingPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/WuJinModeStory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/HealthPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/MeleeWeaponCollider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/WeaponData/WeaponData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingSystem/RealBuilding.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MonoSingleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoadingManager.cs" />
@@ -128,13 +121,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/UpdateGameStateTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/MakeMonsterPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GameStory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GuShiModeStory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyChaseState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/WeaponPickUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/HealthPickUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/BuildingPickUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/AmmoPickUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpSubManager.cs" />
       </list>
     </option>
   </component>
@@ -216,7 +217,7 @@
       <workItem from="1577290198557" duration="620000" />
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
-      <workItem from="1577378671058" duration="41888000" />
+      <workItem from="1577378671058" duration="51356000" />
     </task>
     <servers />
   </component>

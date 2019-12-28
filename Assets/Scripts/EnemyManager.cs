@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Xcy.Utility;
 using Random = System.Random;
 
@@ -23,7 +24,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         List<EnemyControllerBase>();
     
     private List<EnemyControllerBase> _roadEnemys=new List<EnemyControllerBase>();
-    private List<EnemyControllerBase> _boomEnemys=new List<EnemyControllerBase>();
+    private Queue<EnemyControllerBase> _boomEnemys=new 
+    Queue<EnemyControllerBase>();
 
     private SimpleObjectPool<EnemyControllerBase> _boomEnemysPool;
 
@@ -54,8 +56,13 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
 
     public void MakeMonsterAtPosition(int pointIndex,int 
-    productCount,int needKillCount)
+    productCount,int needKillCount,bool recycleList=true)
     {
+        if (recycleList)
+        {
+            Debug.Log("RecycleMonsterList");
+            RecycleMonsterList(false);
+        }
         keepMakeMonster = true;
         _needKillEnemyCount = needKillCount;
         currentInstantiatePos = _monsterPoints[pointIndex].transform;
@@ -67,21 +74,27 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         for (int i = 0; i < productCount; i++)
         {
             AllocateMonster();
-            yield return 1;
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
-    public void RecycleMonsterList()
+    private void RecycleMonsterList(bool countKill)
     {
-        
+//        int count = _boomEnemys.Count;
+//        for (int i = 0; i < count; i++)
+//        {
+//            Recycle(_boomEnemys.Peek(),true,countKill);
+//        }
+        int count = _boomEnemys.Count*2/3;
+        StartCoroutine(RecycleMonsterListIEnum(count,countKill));
     }
 
-    IEnumerator RecycleMonsterListIEnum()
+    IEnumerator RecycleMonsterListIEnum(int count,bool countKill)
     {
-        for (int i = 0; i < _boomEnemys.Count; i++)
+        for (int i = 0; i < count; i++)
         {
-            Recycle(_boomEnemys[i]);
-            yield return 1;
+            Recycle(_boomEnemys.Peek(),false,countKill);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -122,7 +135,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         
         _enemyCount++;
         temp.isBoomMonster = true;
-        _boomEnemys.Add(temp);
+        _boomEnemys.Enqueue(temp);
         temp.gameObject.SetActive(false);
         return temp;
     }
@@ -135,34 +148,43 @@ public class EnemyManager : MonoSingleton<EnemyManager>
                                       UnityEngine.Random.Range(-3,4),
                                       UnityEngine.Random.Range(-3,4),
                                       UnityEngine.Random.Range(-3,4));
+        if (!_boomEnemys.Contains(temp))
+        {
+            _boomEnemys.Enqueue(temp);
+        }
         temp.gameObject.SetActive(true);
         temp.Respawn();
     }
 
     public void Recycle(EnemyControllerBase controllerBase,bool 
-    immediatelydelete=false)
+    immediatelyDelete=false,bool countEnemyKill=true)
     {
+        if (!controllerBase.isDead)
+        {
+            controllerBase.onDied();
+        }
         if (controllerBase.isBoomMonster&&keepMakeMonster)
         {
             AllocateMonster();
         }
-
-        _needKillEnemyCount--;
+        if (countEnemyKill)
+        {
+            _needKillEnemyCount--;
+        }
         if (_needKillEnemyCount==0)
         {
             Debug.Log("_needKillEnemyCount==0");
             keepMakeMonster = false;
-            GameStory.Instance.UpdateStoryState();
         }
 
-        if (!immediatelydelete)
+        if (!immediatelyDelete)
         {
             StartCoroutine(RecycleIEnu(controllerBase));
         }
         else
         {
             _boomEnemysPool.Recycle(controllerBase);
-            _boomEnemys.Remove(controllerBase);
+            _boomEnemys.Dequeue();
             controllerBase.gameObject.SetActive(false);
         }
 
@@ -172,7 +194,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         yield return new  WaitForSeconds(3f);
         _boomEnemysPool.Recycle(controllerBase);
-        _boomEnemys.Remove(controllerBase);
+        _boomEnemys.Dequeue();
         controllerBase.gameObject.SetActive(false);
     }
 

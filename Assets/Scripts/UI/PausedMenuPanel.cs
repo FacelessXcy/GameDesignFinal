@@ -30,6 +30,7 @@ public class PausedMenuPanel : BasePanel
         Cursor.visible = true;
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts=true;
+        canvasGroup.interactable = true;
         GameManager.Instance.PauseGame();
     }
 
@@ -37,12 +38,14 @@ public class PausedMenuPanel : BasePanel
     {
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts=false;
+        canvasGroup.interactable = false;
     }
 
     public override void OnResume()
     {
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts=true;
+        canvasGroup.interactable = true;
     }
 
     public override void OnExit()
@@ -51,6 +54,7 @@ public class PausedMenuPanel : BasePanel
         Cursor.visible = false;
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts=false;
+        canvasGroup.interactable = false;
     }
 
     private void ResumeGame()

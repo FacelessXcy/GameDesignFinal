@@ -41,7 +41,10 @@ public class EnemyControllerBase : MonoBehaviour
     private MeleeWeaponCollider _meleeWeaponCollider;
     private AudioSource _audioSource;
     private EnemyFSMSystem _fsm;
+    [HideInInspector]
+    public Rigidbody rigidbody;
 
+    [HideInInspector] public CharacterController characterController;
     private Transform _player;
     public Transform Player => _player;
 
@@ -94,6 +97,9 @@ public class EnemyControllerBase : MonoBehaviour
     public GameObject _currentExplosion;
     private void Start()
     {
+        characterController = GetComponent<CharacterController>();
+        characterController.enabled = false;
+        rigidbody = GetComponent<Rigidbody>();
         _allHaveExplosion=new List<GameObject>();
         _meleeWeaponCollider = transform.Find("WeaponCollider")
         .GetComponent<MeleeWeaponCollider>();
@@ -284,6 +290,15 @@ public class EnemyControllerBase : MonoBehaviour
         return false;
     }
 
+    public bool InTheRound(Vector3 target)
+    {
+        if (Vector3.Distance(target,transform.position)<=2*viewDistance)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public bool IsInAttackRange(Vector3 target)
     {
         if (Vector3.Angle(transform.forward,target-transform.position)
@@ -324,10 +339,7 @@ public class EnemyControllerBase : MonoBehaviour
 
     public void onDied()
     {
-        isDeadTrigger = true;
-        GetComponent<CapsuleCollider>().enabled = false;
-        navMeshAgent.isStopped = true;
-        isDead = true;
+        Dead();
         if (isBoomMonster)
         {
             EnemyManager.Instance.Recycle(this);
@@ -453,6 +465,10 @@ public class EnemyControllerBase : MonoBehaviour
     {
         if (isDead)
         {
+            if (_fsm==null)
+            {
+                MakeFSM(); 
+            }
             isRespawn = true;
             isDead = false;
             isDeadTrigger = false;
@@ -462,6 +478,21 @@ public class EnemyControllerBase : MonoBehaviour
             navMeshAgent.isStopped = false;
             GetComponent<Health>().Respawn();
             _animator.SetTrigger("Respawn");
+        }
+    }
+
+    private void Dead()
+    {
+        isDead = true;
+        isDeadTrigger = true;
+        GetComponent<CapsuleCollider>().enabled = false;
+        if (navMeshAgent==null)
+        {
+            navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+        if (navMeshAgent.isActiveAndEnabled)
+        {
+            navMeshAgent.isStopped = true;
         }
     }
 

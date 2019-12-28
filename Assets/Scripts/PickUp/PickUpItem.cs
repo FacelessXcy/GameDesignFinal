@@ -17,6 +17,7 @@ public class PickUpItem : MonoBehaviour
     private MeshCollider[] _meshColliders;
     private bool _rotate;
     private bool _canPickup;
+    [HideInInspector] public PickUpSubManager pickUpSubManager;
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -83,8 +84,10 @@ public class PickUpItem : MonoBehaviour
                 _canPickup = false;
                 onPick.Invoke(weaponController);
             }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
+    
+    
     
 }
