@@ -132,10 +132,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/AmmoPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpSubManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GuShiModeStory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
       </list>
     </option>
   </component>
@@ -217,7 +217,7 @@
       <workItem from="1577290198557" duration="620000" />
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
-      <workItem from="1577378671058" duration="52847000" />
+      <workItem from="1577378671058" duration="53784000" />
     </task>
     <servers />
   </component>
