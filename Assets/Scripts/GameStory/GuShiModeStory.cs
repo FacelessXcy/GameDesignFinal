@@ -60,11 +60,22 @@ public class GuShiModeStory : GameStory
                 UpdateDialog(6,false);
                 break;
             case 4:
+                UpdateDialog(7,false);
+                EnemyManager.Instance.MakeMonsterAtPosition(1,30,30);
                 break;
             case 5:
+                UpdateDialog(8,false);
+                EnemyManager.Instance.MakeMonsterAtPosition(2,25,25);
                 break;
             case 6:
+                UpdateDialog(9,false);
+                EnemyManager.Instance.MakeMonsterAtPosition(3,10,10);
                 break;
+            case 7:
+                UIManager.Instance.PushPanel(UIType.EndMenuUI);
+                break;
+            case 8:
+                
             default:
                 break;
         }

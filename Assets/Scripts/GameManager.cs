@@ -15,6 +15,12 @@ public enum GameState
     Stop
 }
 
+public enum DifficultMode
+{
+    Easy,
+    Hard
+}
+
 public class GameManager : MonoSingleton<GameManager>
 {
     [HideInInspector] public bool gameIsPaused;
@@ -25,6 +31,8 @@ public class GameManager : MonoSingleton<GameManager>
     [HideInInspector] public string endlessDescri =
         "无尽模式：你将面临各种怪物一波一波如潮水般的攻击。活下去，是你唯一的任务。";
 
+    [HideInInspector] public DifficultMode difficult;
+    
     public void PauseGame()
     {
         Cursor.lockState = CursorLockMode.None;

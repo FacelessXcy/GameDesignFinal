@@ -122,7 +122,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MonoSingleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoadingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EndPanel.cs" />
@@ -132,9 +131,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/UpdateGameStateTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/MakeMonsterPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GameStory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GuShiModeStory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -216,7 +216,7 @@
       <workItem from="1577290198557" duration="620000" />
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
-      <workItem from="1577378671058" duration="35712000" />
+      <workItem from="1577378671058" duration="39271000" />
     </task>
     <servers />
   </component>
