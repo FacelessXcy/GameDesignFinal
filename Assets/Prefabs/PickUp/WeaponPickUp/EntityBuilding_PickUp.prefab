@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 1927321544713726236}
   - component: {fileID: 6899416866039474897}
   - component: {fileID: 2946186746795336451}
+  - component: {fileID: 5036154708680825024}
+  - component: {fileID: -7766691419611767147}
+  - component: {fileID: 2461413684729068642}
   m_Layer: 11
   m_Name: EntityBuilding_PickUp
   m_TagString: Untagged
@@ -206,3 +209,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &5036154708680825024
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171814410308379121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &-7766691419611767147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171814410308379121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5615065eefcf1418ed5c1c4dfcee62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseGravityAtBegin: 1
+  rotatingSpeed: 360
+  pickupClip: {fileID: 8300000, guid: 23d4ae4161e8d2041bbf9541c83302aa, type: 3}
+--- !u!114 &2461413684729068642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171814410308379121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95abdc4317d85e943aa378278ebbb7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

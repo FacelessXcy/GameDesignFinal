@@ -211,6 +211,12 @@
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="GameStory" t="Include">
+            <e p="GameStory.cs" t="Include" />
+            <e p="GuShiModeStory.cs" t="Include" />
+            <e p="MakeMonsterPoint.cs" t="Include" />
+            <e p="UpdateGameStateTrigger.cs" t="Include" />
+          </e>
           <e p="Health.cs" t="Include" />
           <e p="InputSystem" t="Include">
             <e p="MyButton.cs" t="Include" />
@@ -221,6 +227,7 @@
           <e p="MonoSingleton.cs" t="Include" />
           <e p="PickUp" t="Include">
             <e p="AmmoPickUp.cs" t="Include" />
+            <e p="BuildingPickUp.cs" t="Include" />
             <e p="HealthPickUp.cs" t="Include" />
             <e p="PickUpItem.cs" t="Include" />
             <e p="WeaponPickUp.cs" t="Include" />
@@ -230,6 +237,7 @@
           <e p="SceneLoadingManager.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="BasePanel.cs" t="Include" />
+            <e p="EndPanel.cs" t="Include" />
             <e p="PausedMenuPanel.cs" t="Include" />
             <e p="PlayingPanel.cs" t="Include" />
             <e p="StartMenuPanel.cs" t="Include" />

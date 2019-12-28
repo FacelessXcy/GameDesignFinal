@@ -10,6 +10,9 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     public Transform currentInstantiatePos;
     
     public MonsterResource monsterResource;
+    private MakeMonsterPoint[] _monsterPoints;
+
+    public bool keepMakeMonster;
     //资源存储
     private List<EnemyControllerBase> _bigMelee=new  List<EnemyControllerBase>();
     private List<EnemyControllerBase> _bigRange=new  
@@ -25,17 +28,48 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     private SimpleObjectPool<EnemyControllerBase> _boomEnemysPool;
 
     private int _enemyCount = 0;
+    private int _needKillEnemyCount = 0;
+    private void Awake()
+    {
+        _destoryOnLoad = true;
+    }
+
     private void Start()
     {
+        if (monsterResource==null)
+        {
+            Debug.Log("monsterResource 为空，需要赋值");
+            return;
+        }
+
+        _monsterPoints=GetComponentsInChildren<MakeMonsterPoint>();
         LoadEnemyResource();
         _boomEnemysPool=new SimpleObjectPool<EnemyControllerBase>
         (FactoryMethod,null,30);
-        for (int i = 0; i < 30; i++)
-        {
-            AllocateMonster();
-        }
+//        for (int i = 0; i < 30; i++)
+//        {
+//            AllocateMonster();
+//        }
     }
 
+
+    public void MakeMonsterAtPosition(int pointIndex,int 
+    productCount,int needKillCount)
+    {
+        keepMakeMonster = true;
+        _needKillEnemyCount = needKillCount;
+        currentInstantiatePos = _monsterPoints[pointIndex].transform;
+        StartCoroutine(MakeMonsterAtPositionIEnu(productCount));
+    }
+
+    IEnumerator MakeMonsterAtPositionIEnu(int productCount)
+    {
+        for (int i = 0; i < productCount; i++)
+        {
+            AllocateMonster();
+            yield return 1;
+        }
+    }
 
     private EnemyControllerBase FactoryMethod()
     {
@@ -89,20 +123,24 @@ public class EnemyManager : MonoSingleton<EnemyManager>
                                       UnityEngine.Random.Range(-3,4));
         temp.gameObject.SetActive(true);
         temp.Respawn();
-//        Instantiate(_smallMelee[UnityEngine.Random.Range
-//                (0,_smallRange.Count)], 
-//            currentInstantiatePos.position+new Vector3(UnityEngine.Random.Range(-3,4),
-//                UnityEngine.Random.Range(-3,4),
-//                UnityEngine.Random.Range(-3,4)),
-//            Quaternion.identity, transform);
     }
 
     public void Recycle(EnemyControllerBase controllerBase)
     {
-        AllocateMonster();
+        if (controllerBase.isBoomMonster&&keepMakeMonster)
+        {
+            AllocateMonster();
+        }
+
+        _needKillEnemyCount--;
+        if (_needKillEnemyCount==0)
+        {
+            Debug.Log("_needKillEnemyCount==0");
+            keepMakeMonster = false;
+            GameStory.Instance.UpdateStoryState();
+        }
         StartCoroutine(RecycleIEnu(controllerBase));
         
-//        Destroy(controllerBase.gameObject,5.0f);
     }
 
     IEnumerator RecycleIEnu(EnemyControllerBase controllerBase)
@@ -115,6 +153,11 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
     private void LoadEnemyResource()
     {
+        if (monsterResource==null)
+        {
+            Debug.Log("monsterResource 为空，需要赋值");
+            return;
+        }
         foreach (MonsterLoadInfo loadInfo in monsterResource.monsterPath)
         {
             switch (loadInfo.monsterType)

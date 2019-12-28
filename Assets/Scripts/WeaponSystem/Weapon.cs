@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public AmmoType ammoType;
     [HideInInspector] public FireType fireType;
     [HideInInspector] public WeaponType weaponType;
-    [HideInInspector] public float damage;
+    [HideInInspector] public int damage;
     [HideInInspector] public float range;
     [HideInInspector] public int maxAmmo;
     [HideInInspector] public GameObject cartridge;

@@ -3214,7 +3214,7 @@ MonoBehaviour:
   viewDistance: 15
   viewAngle: 90
   walkSpeed: 3.5
-  atkDamage: 25
+  atkDamage: 35
   attackRange: 20
   _animator: {fileID: 0}
   navMeshAgent: {fileID: 0}

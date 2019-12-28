@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PausedUI
   m_EditorClassIdentifier: 
   uiType: 2
-  uiPath: UI/PausedMenuPanel
+  uiPath: UI/PausePanel

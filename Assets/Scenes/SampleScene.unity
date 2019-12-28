@@ -1456,6 +1456,7 @@ MonoBehaviour:
   uiLoadPath:
   - {fileID: 11400000, guid: 1bf16fe0bb7289d4e9522da11e8f2e3c, type: 2}
   - {fileID: 11400000, guid: 425202bc456b13f46b3629c23e3de1a5, type: 2}
+  - {fileID: 11400000, guid: f0848c7fbd43e754ab33069bea2aee94, type: 2}
   awakeLoadUI: 1
 --- !u!4 &2099390801 stripped
 Transform:

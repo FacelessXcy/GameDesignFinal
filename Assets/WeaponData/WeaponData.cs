@@ -19,7 +19,7 @@ public class WeaponData:ScriptableObject
     public float reloadTime;
     public float fireTime;
     public int maxAmmo;
-    public float damage;    
+    public int damage;    
     public AudioClip fireClip;
     public AudioClip reloadClip;
     public GameObject dropWeaponPrefab;

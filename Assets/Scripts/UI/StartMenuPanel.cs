@@ -6,22 +6,37 @@ using UnityEngine.UI;
 
 public class StartMenuPanel : BasePanel
 {
-
-    private Button _startBtn;
+    public Sprite _missionImage;
+    public Sprite _endlessImage;
+    private Button _startMissionBtn;
+    private Button _startEndlessBtn;
+    private Button _bestRecord;
     private Button _exitBtn;
 
     public override void Start()
     {
         base.Start();
-        _startBtn = transform.Find("StartGameBtn")
+        _startMissionBtn = transform.Find("Mission")
             .GetComponent<Button>();
-        _exitBtn= transform.Find("ExitGameBtn")
+        _startEndlessBtn = transform.Find("Endless")
+            .GetComponent<Button>();
+        _bestRecord = transform.Find("Record")
+            .GetComponent<Button>();
+        _exitBtn= transform.Find("Exit")
             .GetComponent<Button>();
         
-        _startBtn.onClick.AddListener(() =>
+        _startMissionBtn.onClick.AddListener(() =>
         {
-            SceneLoadingManager.Instance.LoadNewScene("Demo_City",null,"测试文字");
+            SceneLoadingManager.Instance.LoadNewScene("Demo_City",
+            _missionImage,GameManager.Instance.missionDescri);
         });
+        _startEndlessBtn.onClick.AddListener(() =>
+        {
+            SceneLoadingManager.Instance.LoadNewScene("SampleScene",
+            _endlessImage,GameManager.Instance.endlessDescri
+                );
+        });
+        
         _exitBtn.onClick.AddListener(Application.Quit);
     }
 

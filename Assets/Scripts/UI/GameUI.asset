@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameUI
   m_EditorClassIdentifier: 
   uiType: 1
-  uiPath: UI\PlayingPanel
+  uiPath: UI\GamePlaying

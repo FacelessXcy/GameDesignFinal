@@ -7,16 +7,20 @@ public class PausedMenuPanel : BasePanel
 {
     private Button _resumeGameBtn;
     private Button _backToStartBtn;
+    private Button _restartGameBtn;
     
     public override void Start()
     {
         base.Start();
-        _resumeGameBtn = transform.Find("ResumeGameBtn")
+        _resumeGameBtn = transform.Find("Menu/Continue")
             .GetComponent<Button>();
-        _backToStartBtn = transform.Find("BackToStartBtn")
+        _backToStartBtn = transform.Find("Menu/BackMenu")
+            .GetComponent<Button>();
+        _restartGameBtn = transform.Find("Menu/Restart")
             .GetComponent<Button>();
         _resumeGameBtn.onClick.AddListener(ResumeGame);
         _backToStartBtn.onClick.AddListener(BackToStart);
+        _restartGameBtn.onClick.AddListener(RestartGame);
     }
 
     public override void OnEnter()
@@ -58,6 +62,11 @@ public class PausedMenuPanel : BasePanel
     private void BackToStart()
     {
         SceneLoadingManager.Instance.LoadNewScene("StartScene");
+    }
+
+    private void RestartGame()
+    {
+        SceneLoadingManager.Instance.LoadNewScene("Demo_City");
     }
 
 }

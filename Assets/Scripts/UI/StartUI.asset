@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StartUI
   m_EditorClassIdentifier: 
   uiType: 0
-  uiPath: UI/StartMenuPanel
+  uiPath: UI/StartPanel

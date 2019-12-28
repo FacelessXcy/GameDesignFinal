@@ -13,7 +13,7 @@ public class SceneLoadingManager : MonoSingleton<SceneLoadingManager>
     public string TargetSceneName => _targetSceneName;
     public Sprite BackGroundImage => _backGroundImage;
     public string TipText => _tipText;
-
+    
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);

@@ -14,6 +14,7 @@ public enum UIType
 
 public class UIManager : MonoSingleton<UIManager>
 {
+    
     public UILoadPath[] uiLoadPath;
     public UIType awakeLoadUI;
     private Canvas _canvas;
@@ -26,6 +27,7 @@ public class UIManager : MonoSingleton<UIManager>
     
     private void Awake()
     {
+        _destoryOnLoad = true;
         _canvas = GetComponent<Canvas>();
         LoadUIPanelInfo();
     }
@@ -124,6 +126,19 @@ public class UIManager : MonoSingleton<UIManager>
     {
         (GetPanel(UIType.PlayingUI) as PlayingPanel).SetBuildingAmount(amount);
     }
+    public void SetDialogText(string text)
+    {
+        (GetPanel(UIType.PlayingUI) as PlayingPanel).SetDialogText(text);
+    }
 
+    public void SetHealthText(int health,int maxHealth)
+    {
+        (GetPanel(UIType.PlayingUI) as PlayingPanel).SetHealthText(health,maxHealth);
+    }
+
+    public void SetMissionText(string text)
+    {
+        (GetPanel(UIType.PlayingUI) as PlayingPanel).SetMissionText(text);
+    }
 
 }

@@ -20,7 +20,7 @@ MonoBehaviour:
   reloadTime: 4
   fireTime: 1
   maxAmmo: 1
-  damage: 100
+  damage: 120
   fireClip: {fileID: 8300000, guid: bbe571f64e3d870459dd5484465c07d4, type: 3}
   reloadClip: {fileID: 8300000, guid: 66d48b80db736db4083611894d43b56b, type: 3}
   dropWeaponPrefab: {fileID: 158284, guid: fb9f17a1ae18a7048a1eeba928770973, type: 3}

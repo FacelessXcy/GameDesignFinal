@@ -239,4 +239,10 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
         isOpen = true;
     }
 
+    public void AddBuildingAmount(int addAmount)
+    {
+        _haveBuildingAmount += addAmount;
+        UIManager.Instance.SetBuildingAmount(_haveBuildingAmount);
+    }
+
 }

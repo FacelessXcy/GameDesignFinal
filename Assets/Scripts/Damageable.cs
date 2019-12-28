@@ -17,7 +17,7 @@ public class Damageable : MonoBehaviour
     }
 
 
-    public void GetDamage(float damage,GameObject damageResource)
+    public void GetDamage(int damage,GameObject damageResource)
     {
         //Debug.Log(name+"被"+damageResource.name+"击中");
         if (_health!=null)

@@ -28,7 +28,7 @@ public class EnemyControllerBase : MonoBehaviour
     
     public float walkSpeed;
 
-    public float atkDamage;
+    public int atkDamage;
     public float attackRange;
     public Animator _animator;
     [HideInInspector]
@@ -338,11 +338,11 @@ public class EnemyControllerBase : MonoBehaviour
         }
     }
 
-    public void OnDamaged(float realDamageAmount,GameObject damageSource)
+    public void OnDamaged(int realDamageAmount,GameObject damageSource)
     {
         if (damageSource.GetComponent<Weapon>().isMeleeWeapon)
         {
-            Debug.Log("isTakeDamadgeTrigger");
+            //Debug.Log("isTakeDamadgeTrigger");
             isTakeDamadgeTrigger = true;
         }
         if (!isInDefend)
@@ -375,12 +375,12 @@ public class EnemyControllerBase : MonoBehaviour
             {
                 if (BuildingInAttackRange(_player.position))
                 {
-                    Debug.Log("AttackBuilding");
+                    //Debug.Log("AttackBuilding");
                     AttackBuilding();
                 }
                 else
                 {
-                    Debug.Log("AttackPlayer");
+                    //Debug.Log("AttackPlayer");
                     AttackPlayer();
                 }
             }

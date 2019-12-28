@@ -7,7 +7,7 @@ using UnityEditor;
 
 public class HealthPickUp : MonoBehaviour
 {
-    public float healAmount; 
+    public int healAmount; 
     private PickUpItem _pickUpItem;
     private void Start()
     {

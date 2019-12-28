@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
 	public LayerMask colliderLayerMask;
 	
 	private Collider[] _colliders;
-	private float _damage;
+	private int _damage;
 	private EnemyControllerBase _controllerBase;
 	void Start () {
 		if (useGrav) {

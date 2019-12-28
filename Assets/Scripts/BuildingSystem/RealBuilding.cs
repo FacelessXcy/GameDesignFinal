@@ -20,7 +20,7 @@ public class RealBuilding : MonoBehaviour
         _health.onDied += OnDied;
     }
 
-    private void OnDamaged(float damage,GameObject damageResource)
+    private void OnDamaged(int damage,GameObject damageResource)
     {
         
         _audioSource.PlayOneShot(hitClip);

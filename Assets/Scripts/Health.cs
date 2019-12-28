@@ -10,18 +10,18 @@ using UnityEditor;
 public class Health : MonoBehaviour
 {
     
-    public float currentHealth;
-    public float maxHealth;
+    public int currentHealth;
+    public int maxHealth;
     
-    public UnityAction<float, GameObject> onDamaged;
-    public UnityAction<float> onHealed;
+    public UnityAction<int, GameObject> onDamaged;
+    public UnityAction<int> onHealed;
     public UnityAction onDied;
     
-    private float _healthBeforeHeal;
-    private float _realHealingAmount;
+    private int _healthBeforeHeal;
+    private int _realHealingAmount;
 
-    private float _healBeforeDamage;
-    private float _realDamageAmount;
+    private int _healBeforeDamage;
+    private int _realDamageAmount;
     
     private bool _isDead;
 
@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void Heal(float healingAmount)
+    public void Heal(int healingAmount)
     {
         if (_isDead)
         {
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage,GameObject damageResource)
+    public void TakeDamage(int damage,GameObject damageResource)
     {
         if (_isDead)
         {

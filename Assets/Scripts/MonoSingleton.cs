@@ -8,6 +8,7 @@ using UnityEditor;
 public class MonoSingleton<T> : MonoBehaviour
 where T:MonoSingleton<T>
 {
+    protected static bool _destoryOnLoad=false;
     private static T _instance = null;
     public static T Instance 
     { 
@@ -27,8 +28,11 @@ where T:MonoSingleton<T>
                     var instanceObj = GameObject.Find(instanceName);
                     if (!instanceObj) 
                         instanceObj = new GameObject(instanceName);
-                    _instance = instanceObj.AddComponent<T>(); 
-                    DontDestroyOnLoad(instanceObj); //保证实例例不不会被释放
+                    _instance = instanceObj.AddComponent<T>();
+                    if (!_destoryOnLoad)
+                    {
+                        DontDestroyOnLoad(instanceObj); //保证实例例不不会被释放
+                    }
                     Debug.LogFormat("Add New Singleton {0} in Game!", instanceName);
                 }
                 else

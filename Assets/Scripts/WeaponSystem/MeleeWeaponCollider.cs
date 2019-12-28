@@ -10,7 +10,7 @@ using UnityEditor;
 public class MeleeWeaponCollider : MonoBehaviour
 {
     [HideInInspector] public GameObject sourceWeapon;
-    [HideInInspector] public float damage;
+    [HideInInspector] public int damage;
 
     public AudioClip attackClip;
     public string[] attackLayer;

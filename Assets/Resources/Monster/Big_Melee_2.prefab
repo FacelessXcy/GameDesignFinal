@@ -2340,7 +2340,7 @@ MonoBehaviour:
   viewDistance: 10
   viewAngle: 90
   walkSpeed: 3.5
-  atkDamage: 25
+  atkDamage: 22
   attackRange: 4
   _animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 300
+  maxHealth: 270
 --- !u!114 &296505526689919859
 MonoBehaviour:
   m_ObjectHideFlags: 0

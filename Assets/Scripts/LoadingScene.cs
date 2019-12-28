@@ -22,8 +22,11 @@ public class LoadingScene : MonoBehaviour
         loadingSlider.value = 0;
         loadingText.text = (0*100).ToString() + " %";
         tipText.text = SceneLoadingManager.Instance.TipText;
-        backGroundImage.sprite = SceneLoadingManager.Instance
-        .BackGroundImage;
+        if (SceneLoadingManager.Instance.BackGroundImage!=null)
+        {
+            backGroundImage.sprite = SceneLoadingManager.Instance.BackGroundImage;
+        }
+        
 //        if (SceneManager.GetActiveScene().name=="LoadingScene")
 //        {
 //            StartCoroutine(AsyncLoading());

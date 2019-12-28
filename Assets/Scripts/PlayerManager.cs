@@ -30,6 +30,9 @@ public class PlayerManager : MonoSingleton<PlayerManager>
         _audioSource.clip = takeDamageClip;
         _health.onDamaged += TakeDamage;
         _health.onDied += OnDie;
+        _health.onHealed += OnHeal;
+        UIManager.Instance.SetHealthText(_health.currentHealth,
+        _health.maxHealth);
     }
 
     private void Update()
@@ -92,19 +95,28 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     }
     
     //受打击
-    private void TakeDamage(float f,GameObject g)
+    private void TakeDamage(int f,GameObject g)
     {
         if (!_audioSource.isPlaying)
         {
             _audioSource.Play();
         }
+        UIManager.Instance.SetHealthText(_health.currentHealth,_health.maxHealth);
+    }
+
+    private void OnHeal(int a)
+    {
+        UIManager.Instance.SetHealthText(_health.currentHealth,_health.maxHealth);
     }
 
     private void OnDie()
     {
         _audioSource.clip = deadClip;
         _audioSource.Play();
-        
+        UIManager.Instance.SetHealthText(0,_health.maxHealth);
+        //Todo
+        GameManager.Instance.PauseGame();
+        UIManager.Instance.PushPanel(UIType.EndMenuUI);
     }
 
 }

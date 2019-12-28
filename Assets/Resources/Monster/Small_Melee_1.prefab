@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 120
 --- !u!54 &1870912419921744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
   viewDistance: 15
   viewAngle: 90
   walkSpeed: 4.5
-  atkDamage: 8
+  atkDamage: 10
   attackRange: 3
   _animator: {fileID: 0}
   navMeshAgent: {fileID: 0}
