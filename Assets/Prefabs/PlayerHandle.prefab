@@ -152,7 +152,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 237367
+    m_Bits: 761655
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  jumpHeight: 2.5
+  jumpHeight: 2
   walkSpeed: 5
   verticalSensitivity: 35
   horizontalSensitivity: 35

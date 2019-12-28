@@ -39,7 +39,8 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
     private VirtualBuilding _virtualBuilding;
     public bool NextToBuilding => _nextToBuilding;
     public GameObject CurrentHitGameObject => _curHitGo;
-    
+
+    private int _haveBuildingAmount=2;
     private void Start()
     {
         _nextToBuilding = false;
@@ -50,6 +51,7 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
         _ray=new Ray(transform.position,transform.forward.normalized);
         buildingStep = virtualBuildingGo.transform.lossyScale.x/virtualBuildingGo.transform.lossyScale.x;
         _virtualBuilding = virtualBuildingGo.GetComponent<VirtualBuilding>();
+        UIManager.Instance.SetBuildingAmount(_haveBuildingAmount);
     }
     
 
@@ -115,10 +117,16 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
     {
         if (PlayerInput.Instance.build)
         {
+            if (_haveBuildingAmount<=0)
+            {
+                return;
+            }
             if (_curHitGo!=null&&_virtualBuilding.CanBuild)
             {
                 Instantiate(entityBuildingGo, _curVirtualPos,
                     _curVirtualRot);
+                _haveBuildingAmount -= 1;
+                UIManager.Instance.SetBuildingAmount(_haveBuildingAmount);
             }
             else
             {

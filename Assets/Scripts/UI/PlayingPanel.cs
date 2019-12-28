@@ -8,12 +8,15 @@ public class PlayingPanel : BasePanel
     [HideInInspector] public bool inThisPanel;
     private Image _crosshair;
     private Text _ammoText;
+    private Text _buildingText;
 
     public override void Start()
     {
         base.Start();
         _crosshair = transform.Find("Crosshair").GetComponent<Image>();
         _ammoText = transform.Find("AmmoAmount").GetComponent<Text>();
+        _buildingText = transform.Find("BuildingAmount")
+            .GetComponent<Text>();
     }
 
     void Update()
@@ -64,6 +67,16 @@ public class PlayingPanel : BasePanel
             currentAmmo.ToString() + "/" + haveAmmo.ToString();
     }
 
+    public void SetBuildingAmount(int haveAmount)
+    {
+        if (_buildingText==null)
+        {
+            _buildingText = transform.Find("BuildingAmount")
+                        .GetComponent<Text>();
+        }
+
+        _buildingText.text = "剩余建筑材料:" + haveAmount.ToString();
+    }
 
 
 }

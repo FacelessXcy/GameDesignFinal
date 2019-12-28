@@ -95,6 +95,8 @@ public class PlayerMover : MonoSingleton<PlayerMover>
                 Debug.Log("摔死");
                 GetComponent<Health>().Kill();
             }
+
+            _lastLeaveGroundMaxY = transform.position.y;
             _inGroundCurrentTime = 0.0f;
             _realInGround = true;
         }

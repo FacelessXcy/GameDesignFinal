@@ -119,6 +119,11 @@ public class UIManager : MonoSingleton<UIManager>
     {
         (GetPanel(UIType.PlayingUI) as PlayingPanel).SetAmmoAmount(currentAmmo,haveAmmo);
     }
-    
+
+    public void SetBuildingAmount(int amount)
+    {
+        (GetPanel(UIType.PlayingUI) as PlayingPanel).SetBuildingAmount(amount);
+    }
+
 
 }
