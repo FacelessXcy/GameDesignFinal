@@ -8,7 +8,7 @@ public class EndPanel : BasePanel
 {
     private Button _restartGameBtn;
     private Button _backToStartBtn;
-    
+    private Text _resultText;
     public override void Start()
     {
         base.Start();
@@ -16,7 +16,8 @@ public class EndPanel : BasePanel
             .GetComponent<Button>();
         _backToStartBtn = transform.Find("Menu/BackMenu")
             .GetComponent<Button>();
-        
+        _resultText = transform.Find("Menu/ResultText")
+        .GetComponent<Text>();
         _restartGameBtn.onClick.AddListener(() =>
         {
             string sceneName = SceneManager.GetActiveScene().name;
@@ -46,4 +47,16 @@ public class EndPanel : BasePanel
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0;
     }
+
+    public void SetResultText(string str)
+    {
+        if (_resultText==null)
+        {
+            _resultText = transform.Find("Menu/ResultText")
+                    .GetComponent<Text>();
+        }
+
+        _resultText.text = str;
+    }
+
 }

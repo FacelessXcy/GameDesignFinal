@@ -31,7 +31,7 @@ public class GameManager : MonoSingleton<GameManager>
     [HideInInspector] public string endlessDescri =
         "无尽模式：你将面临各种怪物一波一波如潮水般的攻击。活下去，是你唯一的任务。";
 
-    [HideInInspector] public DifficultMode difficult;
+    [HideInInspector] public DifficultMode difficult=DifficultMode.Easy;
     
     public void PauseGame()
     {

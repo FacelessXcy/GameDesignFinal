@@ -71,6 +71,20 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         }
     }
 
+    public void RecycleMonsterList()
+    {
+        
+    }
+
+    IEnumerator RecycleMonsterListIEnum()
+    {
+        for (int i = 0; i < _boomEnemys.Count; i++)
+        {
+            Recycle(_boomEnemys[i]);
+            yield return 1;
+        }
+    }
+
     private EnemyControllerBase FactoryMethod()
     {
         EnemyControllerBase temp;
@@ -125,7 +139,8 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         temp.Respawn();
     }
 
-    public void Recycle(EnemyControllerBase controllerBase)
+    public void Recycle(EnemyControllerBase controllerBase,bool 
+    immediatelydelete=false)
     {
         if (controllerBase.isBoomMonster&&keepMakeMonster)
         {
@@ -139,8 +154,18 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             keepMakeMonster = false;
             GameStory.Instance.UpdateStoryState();
         }
-        StartCoroutine(RecycleIEnu(controllerBase));
-        
+
+        if (!immediatelydelete)
+        {
+            StartCoroutine(RecycleIEnu(controllerBase));
+        }
+        else
+        {
+            _boomEnemysPool.Recycle(controllerBase);
+            _boomEnemys.Remove(controllerBase);
+            controllerBase.gameObject.SetActive(false);
+        }
+
     }
 
     IEnumerator RecycleIEnu(EnemyControllerBase controllerBase)

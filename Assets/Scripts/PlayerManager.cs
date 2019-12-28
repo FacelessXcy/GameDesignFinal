@@ -97,6 +97,10 @@ public class PlayerManager : MonoSingleton<PlayerManager>
     //受打击
     private void TakeDamage(int f,GameObject g)
     {
+        if (GameManager.Instance.difficult==DifficultMode.Easy)
+        {
+            _health.Heal(100);
+        }
         if (!_audioSource.isPlaying)
         {
             _audioSource.Play();
@@ -115,8 +119,11 @@ public class PlayerManager : MonoSingleton<PlayerManager>
         _audioSource.Play();
         UIManager.Instance.SetHealthText(0,_health.maxHealth);
         //Todo
-        GameManager.Instance.PauseGame();
-        UIManager.Instance.PushPanel(UIType.EndMenuUI);
+        if (GameManager.Instance.difficult!=DifficultMode.Easy)
+        {
+            GameManager.Instance.PauseGame();
+            UIManager.Instance.PushPanel(UIType.EndMenuUI);
+        }
     }
 
 }

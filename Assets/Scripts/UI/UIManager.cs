@@ -141,4 +141,9 @@ public class UIManager : MonoSingleton<UIManager>
         (GetPanel(UIType.PlayingUI) as PlayingPanel).SetMissionText(text);
     }
 
+    public void SetResultText(string str)
+    {
+        (GetPanel(UIType.EndMenuUI) as EndPanel).SetResultText(str);
+    }
+
 }

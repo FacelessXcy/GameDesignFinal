@@ -72,10 +72,10 @@ public class GuShiModeStory : GameStory
                 EnemyManager.Instance.MakeMonsterAtPosition(3,10,10);
                 break;
             case 7:
+                UIManager.Instance.SetResultText("任务完成");
+                GameManager.Instance.PauseGame();
                 UIManager.Instance.PushPanel(UIType.EndMenuUI);
                 break;
-            case 8:
-                
             default:
                 break;
         }
