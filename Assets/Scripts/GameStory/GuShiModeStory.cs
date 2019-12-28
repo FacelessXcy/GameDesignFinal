@@ -54,18 +54,18 @@ public class GuShiModeStory : GameStory
             case 2:
                 //自言自语：什么声音？
                 UpdateDialog(5,false);
-                EnemyManager.Instance.MakeMonsterAtPosition(0,20,30,false);
+                EnemyManager.Instance.MakeMonsterAtPosition(0,20,20,false);
                 break;
             case 3:
                 UpdateDialog(6,false);
                 break;
             case 4:
                 UpdateDialog(7,false);
-                EnemyManager.Instance.MakeMonsterAtPosition(1,15,30);
+                EnemyManager.Instance.MakeMonsterAtPosition(1,15,20);
                 break;
             case 5:
                 UpdateDialog(8,false);
-                EnemyManager.Instance.MakeMonsterAtPosition(2,15,25);
+                EnemyManager.Instance.MakeMonsterAtPosition(2,15,15);
                 break;
             case 6:
                 UpdateDialog(9,false);

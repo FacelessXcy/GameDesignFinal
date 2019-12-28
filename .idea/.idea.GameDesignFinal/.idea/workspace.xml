@@ -100,7 +100,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyFSMState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyDeadState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DeadZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingSystem/BuildingSystem.cs" />
@@ -109,7 +108,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/MeleeWeaponCollider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/WeaponData/WeaponData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingSystem/RealBuilding.cs" />
@@ -125,10 +123,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EndPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GuShiModeStory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyChaseState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/WeaponPickUp.cs" />
@@ -136,6 +131,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/BuildingPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/AmmoPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUpSubManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/EnemyControllerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GuShiModeStory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
       </list>
     </option>
   </component>
@@ -148,7 +148,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -217,7 +217,7 @@
       <workItem from="1577290198557" duration="620000" />
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
-      <workItem from="1577378671058" duration="51356000" />
+      <workItem from="1577378671058" duration="52847000" />
     </task>
     <servers />
   </component>

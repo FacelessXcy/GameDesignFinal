@@ -45,6 +45,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         }
 
         _monsterPoints=GetComponentsInChildren<MakeMonsterPoint>();
+        currentInstantiatePos = _monsterPoints[0].transform;
         LoadEnemyResource();
         _boomEnemysPool=new SimpleObjectPool<EnemyControllerBase>
         (FactoryMethod,null,30);

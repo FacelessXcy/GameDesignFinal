@@ -76,7 +76,7 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
         }
         bulletAudio.mute = false;
         flameThrowerAudio.mute = false;
-        Debug.DrawRay(transform.position,transform.forward.normalized*10.0f);
+        //Debug.DrawRay(transform.position,transform.forward.normalized*10.0f);
         currentWeapon = GetCurrentWeapon();
         if (currentWeapon!=null)
         {

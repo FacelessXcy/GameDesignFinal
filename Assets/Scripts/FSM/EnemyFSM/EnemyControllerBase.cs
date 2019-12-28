@@ -292,7 +292,7 @@ public class EnemyControllerBase : MonoBehaviour
 
     public bool InTheRound(Vector3 target)
     {
-        if (Vector3.Distance(target,transform.position)<=2*viewDistance)
+        if (Vector3.Distance(target,transform.position)<=0.5f*viewDistance)
         {
             return true;
         }
@@ -472,6 +472,7 @@ public class EnemyControllerBase : MonoBehaviour
             isRespawn = true;
             isDead = false;
             isDeadTrigger = false;
+            characterController.enabled = true;
             GetComponent<CapsuleCollider>().enabled = true;
             _fsm.enabled = true;
             isBoomMonster = true;
@@ -486,6 +487,7 @@ public class EnemyControllerBase : MonoBehaviour
         isDead = true;
         isDeadTrigger = true;
         GetComponent<CapsuleCollider>().enabled = false;
+        characterController.enabled = false;
         if (navMeshAgent==null)
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
