@@ -22,10 +22,17 @@ public class MeleeWeaponCollider : MonoBehaviour
         _collider=GetComponent<Collider>();
         _collider.isTrigger = true;
         _collider.enabled = false;
+        _audioSource = GetComponent<AudioSource>();
         if (attackClip!=null)
         {
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            _audioSource.playOnAwake = false;
+            if (_audioSource==null)
+            {
+                _audioSource = gameObject.AddComponent<AudioSource>();
+                _audioSource.outputAudioMixerGroup =
+                    AudioManager.Instance.audioMixer
+                        .FindMatchingGroups("SoundEffect")[0];
+                _audioSource.playOnAwake = false;
+            }
             //_audioSource.clip = attackClip;
         }
     }
