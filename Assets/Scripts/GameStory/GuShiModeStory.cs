@@ -49,7 +49,7 @@ public class GuShiModeStory : GameStory
                 break;
             case 1:
                 //任务提示：沿着公路,前往城南的大桥，进入隧道...
-                UIManager.Instance.SetMissionText("沿着公路,穿过城市,前往城南的大桥，进入隧道");
+                UIManager.Instance.SetMissionText("任务目标：沿着公路,穿过城市,前往城南的大桥，进入隧道");
                 break;
             case 2:
                 //自言自语：什么声音？

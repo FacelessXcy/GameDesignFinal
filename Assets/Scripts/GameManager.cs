@@ -31,8 +31,21 @@ public class GameManager : MonoSingleton<GameManager>
     [HideInInspector] public string endlessDescri =
         "无尽模式：你将面临各种怪物一波一波如潮水般的攻击。活下去，是你唯一的任务。";
 
-    [HideInInspector] public DifficultMode difficult=DifficultMode.Easy;
-    
+    [HideInInspector] public DifficultMode difficult;
+    [HideInInspector] public string[] randomDescri;
+
+    private void Awake()
+    {
+        randomDescri = new[]
+        {
+            "如果从过高的地方跳下来，你会直接死亡。",
+            "不要轻易的接触该地区中的水，据资料显示，水中含有某种剧毒物质。",
+            "每把枪的扩散范围都不同。但所有武器连续射击时的前5发都是比较精准的。" +
+            "射击远距离目标时，多尝试短点射。",
+            "远程怪物会发射爆炸火箭弹，应尽快处理掉他们。"
+        };
+    }
+
     public void PauseGame()
     {
         Cursor.lockState = CursorLockMode.None;

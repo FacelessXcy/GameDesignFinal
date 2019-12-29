@@ -63,6 +63,11 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         _mouseHorizontal = 0;
         _characterController = GetComponent<CharacterController>();
         _playerModel = transform.Find("Player");
+
+        verticalSensitivity =
+            PlayerSetting.Instance.mouseVerticalSensitivity;
+        horizontalSensitivity =
+            PlayerSetting.Instance.mouseHorizontalSensitivity;
     }
 
 

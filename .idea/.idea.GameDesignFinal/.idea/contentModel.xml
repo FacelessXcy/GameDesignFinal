@@ -235,12 +235,15 @@
           </e>
           <e p="PlayerManager.cs" t="Include" />
           <e p="PlayerMover.cs" t="Include" />
+          <e p="PlayerSetting.cs" t="Include" />
           <e p="SceneLoadingManager.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="BasePanel.cs" t="Include" />
+            <e p="DifficultLevelPanel.cs" t="Include" />
             <e p="EndPanel.cs" t="Include" />
             <e p="PausedMenuPanel.cs" t="Include" />
             <e p="PlayingPanel.cs" t="Include" />
+            <e p="SettingPanel.cs" t="Include" />
             <e p="StartMenuPanel.cs" t="Include" />
             <e p="UILoadPath.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
@@ -261,11 +264,6 @@
           </e>
         </e>
         <e p="StylizedExplosionPack" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="destroyMe.cs" t="Include" />
-            <e p="instantiateEffectCaller.cs" t="Include" />
-            <e p="particleColorChanger.cs" t="Include" />
-          </e>
           <e p="Shader" t="Include">
             <e p="alphaBlend_depthBlend_glow.shader" t="Include" />
             <e p="alphaBlend_glow.shader" t="Include" />

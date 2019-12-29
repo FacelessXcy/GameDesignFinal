@@ -465,10 +465,7 @@ public class EnemyControllerBase : MonoBehaviour
     {
         if (isDead)
         {
-            if (_fsm==null)
-            {
-                MakeFSM(); 
-            }
+            
             isRespawn = true;
             isDead = false;
             isDeadTrigger = false;
@@ -477,6 +474,10 @@ public class EnemyControllerBase : MonoBehaviour
             _fsm.enabled = true;
             isBoomMonster = true;
             navMeshAgent.isStopped = false;
+            if (_fsm==null)
+            {
+                MakeFSM(); 
+            }
             GetComponent<Health>().Respawn();
             _animator.SetTrigger("Respawn");
         }
@@ -487,6 +488,10 @@ public class EnemyControllerBase : MonoBehaviour
         isDead = true;
         isDeadTrigger = true;
         GetComponent<CapsuleCollider>().enabled = false;
+        if (characterController==null)
+        {
+            characterController = GetComponent<CharacterController>();
+        }
         characterController.enabled = false;
         if (navMeshAgent==null)
         {

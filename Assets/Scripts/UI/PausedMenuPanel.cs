@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PausedMenuPanel : BasePanel
@@ -8,6 +9,7 @@ public class PausedMenuPanel : BasePanel
     private Button _resumeGameBtn;
     private Button _backToStartBtn;
     private Button _restartGameBtn;
+    private Button _settingBtn;
     
     public override void Start()
     {
@@ -18,9 +20,15 @@ public class PausedMenuPanel : BasePanel
             .GetComponent<Button>();
         _restartGameBtn = transform.Find("Menu/Restart")
             .GetComponent<Button>();
+        _settingBtn = transform.Find("Menu/Setting")
+            .GetComponent<Button>();
         _resumeGameBtn.onClick.AddListener(ResumeGame);
         _backToStartBtn.onClick.AddListener(BackToStart);
         _restartGameBtn.onClick.AddListener(RestartGame);
+        _settingBtn.onClick.AddListener(() =>
+        {
+            UIManager.Instance.PushPanel(UIType.SettingUI);
+        });
     }
 
     public override void OnEnter()
@@ -65,12 +73,15 @@ public class PausedMenuPanel : BasePanel
 
     private void BackToStart()
     {
-        SceneLoadingManager.Instance.LoadNewScene("StartScene");
+        SceneLoadingManager.Instance.LoadNewScene("StartScene",null,GameManager.Instance.randomDescri[Random.Range(0,
+            GameManager.Instance.randomDescri.Length)]);
     }
 
     private void RestartGame()
     {
-        SceneLoadingManager.Instance.LoadNewScene("Demo_City");
+        SceneLoadingManager.Instance.LoadNewScene(SceneManager
+        .GetActiveScene().name,null,GameManager.Instance.randomDescri[Random.Range(0,
+            GameManager.Instance.randomDescri.Length)]);
     }
 
 }

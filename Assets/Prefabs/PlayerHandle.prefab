@@ -685,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 153100334422665745}
   m_LocalRotation: {x: 0, y: -0.8578228, z: 0, w: 0.5139456}
   m_LocalPosition: {x: -0.02, y: 0, z: 3.79}
-  m_LocalScale: {x: 0.49999994, y: 1, z: 0.49999994}
+  m_LocalScale: {x: 0.5000003, y: 1, z: 0.5000003}
   m_Children:
   - {fileID: 153100334254259933}
   - {fileID: 153100333939426045}
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4840f32e3eda1934bb89b5e6b73cb1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmoAmount: 500
+  maxAmmoAmount: 1000
   startintWeapons:
   - {fileID: 4151471492727168774}
   - {fileID: 153100334758099174}

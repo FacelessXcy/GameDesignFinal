@@ -23,13 +23,13 @@ public class EndPanel : BasePanel
             string sceneName = SceneManager.GetActiveScene().name;
             SceneLoadingManager.Instance.LoadNewScene(sceneName,
                 null,
-                sceneName=="Demo_City"?
-                    GameManager.Instance.missionDescri:
-                    GameManager.Instance.endlessDescri);
+                GameManager.Instance.randomDescri[Random.Range(0,
+                GameManager.Instance.randomDescri.Length)]);
         });
         _backToStartBtn.onClick.AddListener(() =>
         {
-            SceneLoadingManager.Instance.LoadNewScene("StartScene");
+            SceneLoadingManager.Instance.LoadNewScene("StartScene",null,GameManager.Instance.randomDescri[Random.Range(0,
+                GameManager.Instance.randomDescri.Length)]);
         });
     }
     

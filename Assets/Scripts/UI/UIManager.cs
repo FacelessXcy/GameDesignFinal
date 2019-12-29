@@ -10,6 +10,8 @@ public enum UIType
     PlayingUI,
     PausedMenuUI,
     EndMenuUI,
+    SettingUI,
+    DifficultUI
 }
 
 public class UIManager : MonoSingleton<UIManager>
