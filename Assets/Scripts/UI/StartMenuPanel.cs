@@ -10,7 +10,7 @@ public class StartMenuPanel : BasePanel
     [FormerlySerializedAs("_endlessImage")] public Sprite endlessImage;
     private Button _startMissionBtn;
     private Button _startEndlessBtn;
-    private Button _bestRecord;
+    private Button _keyCodeBtn;
     private Button _exitBtn;
     private Button _settingBtn;
     public override void Start()
@@ -18,16 +18,11 @@ public class StartMenuPanel : BasePanel
         base.Start();
         _startMissionBtn = transform.Find("Mission").GetComponent<Button>();
         _startEndlessBtn = transform.Find("Endless").GetComponent<Button>();
-        _bestRecord = transform.Find("Record").GetComponent<Button>();
+        _keyCodeBtn = transform.Find("KeyCode").GetComponent<Button>();
         _exitBtn= transform.Find("Exit").GetComponent<Button>();
         _settingBtn = transform.Find("Setting").GetComponent<Button>();
         
         
-//        _startMissionBtn.onClick.AddListener(() =>
-//        {
-//            SceneLoadingManager.Instance.LoadNewScene("Demo_City",
-//            _missionImage,GameManager.Instance.missionDescri);
-//        });
         _startMissionBtn.onClick.AddListener(()=>
         {
             UIManager.Instance.PushPanel(UIType.DifficultUI);
@@ -45,7 +40,10 @@ public class StartMenuPanel : BasePanel
             endlessImage,GameManager.Instance.endlessDescri
                 );
         });
-        
+        _keyCodeBtn.onClick.AddListener(() =>
+        {
+            UIManager.Instance.PushPanel(UIType.KeyCodeUI);
+        });
         _exitBtn.onClick.AddListener(Application.Quit);
     }
 

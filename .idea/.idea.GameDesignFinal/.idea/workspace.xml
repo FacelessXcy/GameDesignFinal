@@ -84,13 +84,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneLoadingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Xcy/FSM/FSMSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Xcy/FSM/FSMState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/KeyCodePanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89A51479-21E5-48D1-B8DD-CFF8078F62CD/9a/1f51fe4a/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponComponentFlameThrower.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UILoadPath.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BasePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyResourceLoad/EnemyResource.cs" />
@@ -125,10 +125,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PausedMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Xcy/Manager/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/EndlessModeStory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartMenuPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyFSM/SmallEnemyChaseState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameStory/GameStory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/PlayerWeaponController.cs" />
@@ -141,6 +139,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MonoSingleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/KeyCodePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartMenuPanel.cs" />
       </list>
     </option>
   </component>
@@ -223,6 +224,7 @@
       <workItem from="1577357793925" duration="3801000" />
       <workItem from="1577374377994" duration="612000" />
       <workItem from="1577378671058" duration="75681000" />
+      <workItem from="1577625789939" duration="1771000" />
     </task>
     <servers />
   </component>

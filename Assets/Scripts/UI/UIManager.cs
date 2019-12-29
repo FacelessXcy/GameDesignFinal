@@ -11,7 +11,8 @@ public enum UIType
     PausedMenuUI,
     EndMenuUI,
     SettingUI,
-    DifficultUI
+    DifficultUI,
+    KeyCodeUI
 }
 
 public class UIManager : MonoSingleton<UIManager>

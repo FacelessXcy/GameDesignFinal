@@ -447,8 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cfd96cd0abe1b4c90986b58af0850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missionImage: {fileID: 21300000, guid: 5fcd7e92d5fa735498e142717aa3e5d6, type: 3}
-  _endlessImage: {fileID: 21300000, guid: 5fcd7e92d5fa735498e142717aa3e5d6, type: 3}
+  endlessImage: {fileID: 21300000, guid: 5fcd7e92d5fa735498e142717aa3e5d6, type: 3}
 --- !u!1 &2554498709168983329
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +914,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6700\u4F73\u8BB0\u5F55"
+  m_Text: "\u6309\u952E\u8BF4\u660E"
 --- !u!1 &2554498710519950540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1005,7 @@ GameObject:
   - component: {fileID: 2554498710561992607}
   - component: {fileID: 2554498710561992604}
   m_Layer: 5
-  m_Name: Record
+  m_Name: KeyCode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

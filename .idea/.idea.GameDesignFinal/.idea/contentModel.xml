@@ -243,6 +243,7 @@
             <e p="BasePanel.cs" t="Include" />
             <e p="DifficultLevelPanel.cs" t="Include" />
             <e p="EndPanel.cs" t="Include" />
+            <e p="KeyCodePanel.cs" t="Include" />
             <e p="PausedMenuPanel.cs" t="Include" />
             <e p="PlayingPanel.cs" t="Include" />
             <e p="SettingPanel.cs" t="Include" />
