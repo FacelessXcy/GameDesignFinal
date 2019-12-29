@@ -23,6 +23,11 @@ public class PlayerManager : MonoSingleton<PlayerManager>
 
     private float _exitBattleTime;
 
+    public override void Awake()
+    {
+        _destoryOnLoad = true;
+        base.Awake();
+    }
     private void Start()
     {
         _health = GetComponent<Health>();

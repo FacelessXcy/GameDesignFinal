@@ -42,6 +42,13 @@ public class PlayerWeaponController : MonoSingleton<PlayerWeaponController>
     public Transform CurrentCartridgeSpawnpoint { get;private set; }
     public Transform CartridgeHandle{ get;private set; }
 
+
+    public override void Awake()
+    {
+        _destoryOnLoad = true;
+        base.Awake();
+    }
+
     private void Start()
     {
         CartridgeHandle= GameObject.FindWithTag("CartridgeHandle").transform;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,19 @@ public class PlayerSetting : MonoSingleton<PlayerSetting>
         SaveSettingData();
     }
 
+    public override void Awake()
+    {
+        base.Awake();
+        LoadSettingData();
+    }
+
+    public void LoadSettingData()
+    {
+        mouseHorizontalSensitivity= PlayerPrefs.GetFloat("MouseHorizontal",35f);
+        mouseVerticalSensitivity=PlayerPrefs.GetFloat("MouseVertical",35f);
+        bgmVolume=PlayerPrefs.GetFloat("bgmVolume",0.5f);
+        soundEffectVolume=PlayerPrefs.GetFloat("soundEffectVolume",0.5f);
+    }
     public void SaveSettingData()
     {
         PlayerPrefs.SetFloat("MouseHorizontal",mouseHorizontalSensitivity);

@@ -26,14 +26,13 @@ public class UIManager : MonoSingleton<UIManager>
     private Dictionary<UIType,BasePanel> _panelDic=new Dictionary<UIType, BasePanel>();
 
     private Stack<BasePanel> _panelStack=new Stack<BasePanel>();
-    
-    private void Awake()
+    public override void Awake()
     {
         _destoryOnLoad = true;
         _canvas = GetComponent<Canvas>();
         LoadUIPanelInfo();
+        base.Awake();
     }
-
 
     private void Start()
     {

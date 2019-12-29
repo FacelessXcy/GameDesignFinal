@@ -12,7 +12,6 @@ public class PlayerMover : MonoSingleton<PlayerMover>
     [HideInInspector]public bool gameIsPaused;
     
     #region public 
-
     public float jumpHeight;
     public float walkSpeed;
     public float verticalSensitivity;
@@ -53,8 +52,13 @@ public class PlayerMover : MonoSingleton<PlayerMover>
     private float _inGroundCurrentTime;
     private float _lastLeaveGroundMaxY=0.0f;
     #endregion
-    
 
+
+    public override void Awake()
+    {
+        _destoryOnLoad = true;
+        base.Awake();
+    }
 
     private void Start()
     {
@@ -64,13 +68,10 @@ public class PlayerMover : MonoSingleton<PlayerMover>
         _characterController = GetComponent<CharacterController>();
         _playerModel = transform.Find("Player");
 
-        verticalSensitivity =
-            PlayerSetting.Instance.mouseVerticalSensitivity;
-        horizontalSensitivity =
-            PlayerSetting.Instance.mouseHorizontalSensitivity;
+        SetPlayerSetting();
     }
 
-
+    
     private void Update()
     {
         if (gameIsPaused)
@@ -193,4 +194,13 @@ public class PlayerMover : MonoSingleton<PlayerMover>
             GetComponent<Health>().Kill();
         }
     }
+
+    public void SetPlayerSetting()
+    {
+        verticalSensitivity =
+            PlayerSetting.Instance.mouseVerticalSensitivity;
+        horizontalSensitivity =
+            PlayerSetting.Instance.mouseHorizontalSensitivity;
+    }
+
 }

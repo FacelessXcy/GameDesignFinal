@@ -9795,7 +9795,8 @@ AudioSource:
   m_GameObject: {fileID: 7172527868806477311}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8787713129385926817, guid: d3818b514226a6148bad30baf9aa6f88,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c8862557ba4c0b64ba678de7ff1538ed, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9911,6 +9912,7 @@ MonoBehaviour:
   bulletSpreadAngle: 0
   projectilePrefab: {fileID: 0}
   dropWeaponPrefab: {fileID: 0}
+  crosshair: {fileID: 0}
   owner: {fileID: 0}
 --- !u!1 &7172527868806485015
 GameObject:

@@ -185,6 +185,7 @@
           <e p="AnimatorFSM" t="Include">
             <e p="FSMResetTrigger.cs" t="Include" />
           </e>
+          <e p="AudioManager.cs" t="Include" />
           <e p="BuildingSystem" t="Include">
             <e p="BuildingSystem.cs" t="Include" />
             <e p="RealBuilding.cs" t="Include" />
@@ -212,6 +213,7 @@
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="GameStory" t="Include">
+            <e p="EndlessModeStory.cs" t="Include" />
             <e p="GameStory.cs" t="Include" />
             <e p="GuShiModeStory.cs" t="Include" />
             <e p="MakeMonsterPoint.cs" t="Include" />

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -9,7 +10,7 @@ public class MonoSingleton<T> : MonoBehaviour
 where T:MonoSingleton<T>
 {
     protected static bool _destoryOnLoad=false;
-    private static T _instance = null;
+    private static T _instance;
     public static T Instance 
     { 
         get { 
@@ -18,6 +19,7 @@ where T:MonoSingleton<T>
                 _instance = FindObjectOfType<T>();
                 if (FindObjectsOfType<T>().Length > 1)
                 {
+                    
                     Debug.LogWarning("More than 1"); 
                     return _instance;
                 }
@@ -31,6 +33,7 @@ where T:MonoSingleton<T>
                     _instance = instanceObj.AddComponent<T>();
                     if (!_destoryOnLoad)
                     {
+                        Debug.Log(instanceName+"Instance");
                         DontDestroyOnLoad(instanceObj); //保证实例例不不会被释放
                     }
                     Debug.LogFormat("Add New Singleton {0} in Game!", instanceName);
@@ -43,6 +46,24 @@ where T:MonoSingleton<T>
             return _instance;
         }
     }
+
+    public virtual void Awake()
+    {
+        if (_instance==null)
+        {
+            _instance = this as T;
+            if (!_destoryOnLoad)
+            {
+                Debug.Log(this+"awake");
+                DontDestroyOnLoad(this.gameObject);
+            }
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     protected virtual void OnDestroy()
     {
         _instance = null;

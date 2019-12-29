@@ -15230,7 +15230,8 @@ AudioSource:
   m_GameObject: {fileID: 5855678225016314690}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8787713129385926817, guid: d3818b514226a6148bad30baf9aa6f88,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -15338,7 +15339,7 @@ MonoBehaviour:
   ammoType: 1
   fireType: 0
   weaponType: 1
-  damage: 50
+  damage: 0
   range: 100
   maxAmmo: 30
   cartridge: {fileID: 0}
@@ -15346,6 +15347,7 @@ MonoBehaviour:
   bulletSpreadAngle: 5
   projectilePrefab: {fileID: 0}
   dropWeaponPrefab: {fileID: 0}
+  crosshair: {fileID: 0}
   owner: {fileID: 0}
 --- !u!1 &5855678225016317214
 GameObject:

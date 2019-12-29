@@ -8,9 +8,10 @@ public class GameStory:MonoSingleton<GameStory>
     //当前游戏进程Index
     protected int _currentState;
 
-    private void Awake()
+    public override void Awake()
     {
         _destoryOnLoad = true;
+        base.Awake();
     }
 
     public virtual void UpdateStoryState(int stateIndex=-1)

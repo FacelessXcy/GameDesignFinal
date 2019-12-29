@@ -46,8 +46,10 @@ public class PlayerInput : MonoSingleton<PlayerInput>
     public bool changeWeapon3;
     public bool changeWeapon4;
 
-    private void Awake()
+    public override void Awake()
     {
+        _destoryOnLoad = true;
+        base.Awake();
         Application.targetFrameRate = 60;
     }
 

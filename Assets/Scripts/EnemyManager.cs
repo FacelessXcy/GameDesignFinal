@@ -31,9 +31,11 @@ public class EnemyManager : MonoSingleton<EnemyManager>
 
     private int _enemyCount = 0;
     private int _needKillEnemyCount = 0;
-    private void Awake()
+    public int CurrentKillCount=0;
+    public override void Awake()
     {
         _destoryOnLoad = true;
+        base.Awake();
     }
 
     private void Start()
@@ -64,9 +66,20 @@ public class EnemyManager : MonoSingleton<EnemyManager>
             Debug.Log("RecycleMonsterList");
             RecycleMonsterList(false);
         }
+
+        CurrentKillCount = 0;
+        if (pointIndex==-1)
+        {
+            currentInstantiatePos = _monsterPoints[UnityEngine.Random
+            .Range(0,_monsterPoints.Length)]
+            .transform;
+        }
+        else
+        {
+            currentInstantiatePos = _monsterPoints[pointIndex].transform;
+        }
         keepMakeMonster = true;
         _needKillEnemyCount = needKillCount;
-        currentInstantiatePos = _monsterPoints[pointIndex].transform;
         StartCoroutine(MakeMonsterAtPositionIEnu(productCount));
     }
 
@@ -147,7 +160,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         temp.transform.position = currentInstantiatePos.position+
                                   new Vector3(
                                       UnityEngine.Random.Range(-3,4),
-                                      UnityEngine.Random.Range(-3,4),
+                                      0,
                                       UnityEngine.Random.Range(-3,4));
         if (!_boomEnemys.Contains(temp))
         {
@@ -160,6 +173,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     public void Recycle(EnemyControllerBase controllerBase,bool 
     immediatelyDelete=false,bool countEnemyKill=true)
     {
+        CurrentKillCount++;
         if (!controllerBase.isDead)
         {
             controllerBase.onDied();
@@ -174,7 +188,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         }
         if (_needKillEnemyCount==0)
         {
-            Debug.Log("_needKillEnemyCount==0");
+            //Debug.Log("_needKillEnemyCount==0");
             keepMakeMonster = false;
         }
 
@@ -195,7 +209,10 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         yield return new  WaitForSeconds(3f);
         _boomEnemysPool.Recycle(controllerBase);
-        _boomEnemys.Dequeue();
+        if (_boomEnemys!=null)
+        {
+            _boomEnemys.Dequeue();
+        }
         controllerBase.gameObject.SetActive(false);
     }
 

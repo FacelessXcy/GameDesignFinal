@@ -5,12 +5,17 @@ using Xcy.Common;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
-public class AudioManager : MonoSingleton<AudioManager>
+namespace Xcy.Manager
 {
-    private AudioSource _musicSource;
-    private Dictionary<string,AudioSource> _soundSources=new Dictionary<string, AudioSource>();
-	private AudioListener _audioListener;
+
+    public class AudioManager : MonoSingleton<AudioManager>
+    {
+        private AudioSource _musicSource;
+        
+        private Dictionary<string, AudioSource> _soundSources =
+            new Dictionary<string, AudioSource>();
+
+        private AudioListener _audioListener;
 
         private void CheckAudioListener()
         {
@@ -21,19 +26,22 @@ public class AudioManager : MonoSingleton<AudioManager>
 
             if (!_audioListener)
             {
-                _audioListener = gameObject.AddComponent<AudioListener>();
+                _audioListener =
+                    gameObject.AddComponent<AudioListener>();
             }
         }
-   
+
         public void PlaySound(string soundName)
         {
             CheckAudioListener();
             if (!_soundSources.ContainsKey(soundName))
             {
                 AudioClip clip = Resources.Load<AudioClip>(soundName);
-                AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-                _soundSources.Add(soundName,audioSource);
+                AudioSource audioSource =
+                    gameObject.AddComponent<AudioSource>();
+                _soundSources.Add(soundName, audioSource);
             }
+
             _soundSources[soundName].Play();
         }
 
@@ -45,11 +53,13 @@ public class AudioManager : MonoSingleton<AudioManager>
             {
                 _musicSource = gameObject.AddComponent<AudioSource>();
             }
-            if (_musicSource.clip.name!=musicName)
+
+            if (_musicSource.clip.name != musicName)
             {
                 AudioClip clip = Resources.Load<AudioClip>(musicName);
                 _musicSource.clip = clip;
             }
+
             _musicSource.loop = loop;
             _musicSource.Play();
         }
@@ -77,7 +87,7 @@ public class AudioManager : MonoSingleton<AudioManager>
 
         public void SoundOff()
         {
-            foreach(AudioSource soundSource in _soundSources.Values)
+            foreach (AudioSource soundSource in _soundSources.Values)
             {
                 soundSource.Pause();
                 soundSource.mute = true;
@@ -98,5 +108,5 @@ public class AudioManager : MonoSingleton<AudioManager>
                 soundSource.mute = false;
             }
         }
-	
+    }
 }

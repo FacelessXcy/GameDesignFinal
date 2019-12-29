@@ -31,11 +31,12 @@ public class GameManager : MonoSingleton<GameManager>
     [HideInInspector] public string endlessDescri =
         "无尽模式：你将面临各种怪物一波一波如潮水般的攻击。活下去，是你唯一的任务。";
 
-    [HideInInspector] public DifficultMode difficult;
+     public DifficultMode difficult;
     [HideInInspector] public string[] randomDescri;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         randomDescri = new[]
         {
             "如果从过高的地方跳下来，你会直接死亡。",

@@ -41,7 +41,7 @@ public class StartMenuPanel : BasePanel
         _startEndlessBtn.onClick.AddListener(() =>
         {
             GameManager.Instance.difficult = DifficultMode.Hard;
-            SceneLoadingManager.Instance.LoadNewScene("SampleScene",
+            SceneLoadingManager.Instance.LoadNewScene("07 - wildwest",
             endlessImage,GameManager.Instance.endlessDescri
                 );
         });

@@ -41,6 +41,14 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
     public GameObject CurrentHitGameObject => _curHitGo;
 
     private int _haveBuildingAmount=2;
+
+
+    public override void Awake()
+    {
+        _destoryOnLoad = true;
+        base.Awake();
+    }
+
     private void Start()
     {
         _nextToBuilding = false;
@@ -148,35 +156,36 @@ public class BuildingSystem : MonoSingleton<BuildingSystem>
                 
                 _curHitGo = _hit.collider.gameObject;
                 _curVirtualRot = _hit.collider.transform.rotation;
-                switch (CalcBuildPosType(_hit.collider.transform
-                    .position, _hit.point))
-                {
-                    case BuildPos.Front:
-                        _curVirtualPos = _hit.collider.transform.position +
-                                         _hit.collider.transform.forward*buildingStep;
-                        break;
-                    case BuildPos.Back:
-                        _curVirtualPos = _hit.collider.transform.position +
-                                         (-_hit.collider.transform.forward)*buildingStep;
-                        break;
-                    case BuildPos.Up:
-                        _curVirtualPos = _hit.collider.transform.position +
-                                         _hit.collider.transform.up*buildingStep;
-                        break;
-                    case BuildPos.Down:
-                        _curVirtualPos = _hit.collider.transform.position +
-                                         (-_hit.collider.transform.up)*buildingStep;
-                        break;
-                    case BuildPos.Right:
-                        _curVirtualPos = _hit.collider.transform.position +
-                                         _hit.collider.transform.right*buildingStep;
-                        break;
-                    case BuildPos.Left:
-                        _curVirtualPos = _hit.collider.transform.position +
-                                         (-_hit.collider.transform.right)*buildingStep;
-                        break;
-                }
-
+//                switch (CalcBuildPosType(_hit.collider.transform
+//                    .position, _hit.point))
+//                {
+//                    case BuildPos.Front:
+//                        _curVirtualPos = _hit.collider.transform.position +
+//                                         _hit.collider.transform.forward*buildingStep;
+//                        break;
+//                    case BuildPos.Back:
+//                        _curVirtualPos = _hit.collider.transform.position +
+//                                         (-_hit.collider.transform.forward)*buildingStep;
+//                        break;
+//                    case BuildPos.Up:
+//                        _curVirtualPos = _hit.collider.transform.position +
+//                                         _hit.collider.transform.up*buildingStep;
+//                        break;
+//                    case BuildPos.Down:
+//                        _curVirtualPos = _hit.collider.transform.position +
+//                                         (-_hit.collider.transform.up)*buildingStep;
+//                        break;
+//                    case BuildPos.Right:
+//                        _curVirtualPos = _hit.collider.transform.position +
+//                                         _hit.collider.transform.right*buildingStep;
+//                        break;
+//                    case BuildPos.Left:
+//                        _curVirtualPos = _hit.collider.transform.position +
+//                                         (-_hit.collider.transform.right)*buildingStep;
+//                        break;
+//                }
+                _curVirtualPos = _hit.collider.transform.position +
+                                 _hit.normal * buildingStep;
                 _nextToBuilding = true;
             }
             else 

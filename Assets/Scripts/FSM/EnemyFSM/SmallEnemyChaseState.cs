@@ -74,7 +74,7 @@ public class SmallEnemyChaseState : EnemyFSMState
         //Debug.Log("Set Forward  "+ _Fsm.character.GetVelDir());
         if (_Fsm.character.InTheRound(player.position))
         {
-            Debug.Log("InTheRound",_Fsm.character.gameObject);
+            //Debug.Log("InTheRound",_Fsm.character.gameObject);
             if (_Fsm.character.navMeshAgent.enabled)
             {
                 _Fsm.character.navMeshAgent.enabled = false;

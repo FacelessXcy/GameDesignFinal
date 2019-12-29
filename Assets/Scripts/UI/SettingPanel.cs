@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingPanel : BasePanel
@@ -39,16 +40,18 @@ public class SettingPanel : BasePanel
         _bgmVolumeSlider.onValueChanged.AddListener((value) =>
         {
             PlayerSetting.Instance.bgmVolume = value;
+            AudioManager.Instance.SetBGMVolume();
         });
         _soundEffectSlider.onValueChanged.AddListener((value) =>
         {
             PlayerSetting.Instance.soundEffectVolume = value;
+            AudioManager.Instance.SetSoundEffectVolume();
         });
 
         _soundEffectSlider.value =
-            PlayerPrefs.GetFloat("soundEffectVolume", 0.5f);
+            PlayerPrefs.GetFloat("soundEffectVolume", 5f);
         _bgmVolumeSlider.value =
-            PlayerPrefs.GetFloat("bgmVolume", 0.5f);
+            PlayerPrefs.GetFloat("bgmVolume", -20f);
         _verticalSlider.value =
             PlayerPrefs.GetFloat("MouseVertical", 35f);
         _horizontalSlider.value =
@@ -82,5 +85,9 @@ public class SettingPanel : BasePanel
         PlayerSetting.Instance
             .soundEffectVolume = _soundEffectSlider.value;
         PlayerSetting.Instance.SaveSettingData();
+        if (SceneManager.GetActiveScene().name!="StartScene")
+        {
+            PlayerMover.Instance.SetPlayerSetting();
+        }
     }
 }
