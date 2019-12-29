@@ -141,8 +141,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/KeyCodePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/StartMenuPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/MeleeWeaponCollider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" />
       </list>
     </option>
   </component>
@@ -227,7 +227,8 @@
       <workItem from="1577378671058" duration="75681000" />
       <workItem from="1577625789939" duration="1771000" />
       <workItem from="1577632790818" duration="1466000" />
-      <workItem from="1577639839181" duration="2426000" />
+      <workItem from="1577639839181" duration="3477000" />
+      <workItem from="1577644190137" duration="691000" />
     </task>
     <servers />
   </component>

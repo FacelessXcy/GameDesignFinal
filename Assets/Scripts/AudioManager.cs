@@ -10,6 +10,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     private AudioSource _musicAudioSource;
     public AudioClip[] musicList;
     private int _currentPlayIndex=0;
+
     private void Start()
     {
         _musicAudioSource = GetComponent<AudioSource>();
@@ -41,7 +42,7 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     public void SetBGMVolume()
     {
-        audioMixer.SetFloat("MasterVolume",
+        audioMixer.SetFloat("BGMVolume",
             PlayerSetting.Instance.bgmVolume);
     }
 
