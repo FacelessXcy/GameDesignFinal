@@ -1660,6 +1660,11 @@ PrefabInstance:
       propertyPath: currentInstantiatePos
       value: 
       objectReference: {fileID: 1916618104}
+    - target: {fileID: 66203804612675242, guid: 5b6617713ac153d4194e664c0f4430ec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b6617713ac153d4194e664c0f4430ec, type: 3}
 --- !u!1001 &153100332688264230
@@ -1677,7 +1682,7 @@ PrefabInstance:
     - target: {fileID: 153100334422665745, guid: 4da6756eb6a3fd94f97076e4291b4976,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 153100334422665757, guid: 4da6756eb6a3fd94f97076e4291b4976,
         type: 3}

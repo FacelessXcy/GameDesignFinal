@@ -88,6 +88,10 @@ public class Projectile : MonoBehaviour
 		_colliders = Physics.OverlapSphere(transform.position, explosionRadius,colliderLayerMask);
 		foreach (Collider hit in _colliders) 
 		{
+			if (hit.GetComponent<Damageable>()==null)
+			{
+				continue;
+			}
 			Rigidbody rb = hit.GetComponent<Rigidbody> ();
 			if (rb != null)
 				rb.AddExplosionForce (explosionPower, transform.position, explosionRadius, 3.0f);
