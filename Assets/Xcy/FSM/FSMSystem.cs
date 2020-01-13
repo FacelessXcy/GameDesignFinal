@@ -49,9 +49,8 @@ namespace Xcy.FSM
 					Debug.Log("要添加的状态ID" + state.StateID + "已添加");
 					return;
 				}
-
-				_states.Add(state);
 			}
+			_states.Add(state);
 		}
 
 		public void DeleteState(StateID stateID)
@@ -70,7 +69,6 @@ namespace Xcy.FSM
 					return;
 				}
 			}
-
 			Debug.LogError("要删除的状态ID[" + stateID + "]不存在");
 		}
 

@@ -15,7 +15,8 @@ namespace Xcy.Common
 	public class MonoSingleton<T>: MonoBehaviour
 	where T:MonoSingleton<T>
 	{
-		private static T _instance = null;
+		protected static bool _destoryOnLoad=false;
+		private static T _instance;
 		public static T Instance 
 		{ 
 			get { 
@@ -24,6 +25,7 @@ namespace Xcy.Common
 					_instance = FindObjectOfType<T>();
 					if (FindObjectsOfType<T>().Length > 1)
 					{
+                    
 						Debug.LogWarning("More than 1"); 
 						return _instance;
 					}
@@ -34,8 +36,12 @@ namespace Xcy.Common
 						var instanceObj = GameObject.Find(instanceName);
 						if (!instanceObj) 
 							instanceObj = new GameObject(instanceName);
-						_instance = instanceObj.AddComponent<T>(); 
-						DontDestroyOnLoad(instanceObj); //保证实例例不不会被释放
+						_instance = instanceObj.AddComponent<T>();
+						if (!_destoryOnLoad)
+						{
+							Debug.Log(instanceName+"Instance");
+							DontDestroyOnLoad(instanceObj); //保证实例例不不会被释放
+						}
 						Debug.LogFormat("Add New Singleton {0} in Game!", instanceName);
 					}
 					else
@@ -46,10 +52,27 @@ namespace Xcy.Common
 				return _instance;
 			}
 		}
+
+		public virtual void Awake()
+		{
+			if (_instance==null)
+			{
+				_instance = this as T;
+				if (!_destoryOnLoad)
+				{
+					Debug.Log(this+"awake");
+					DontDestroyOnLoad(this.gameObject);
+				}
+			}
+			else
+			{
+				Destroy(this.gameObject);
+			}
+		}
+
 		protected virtual void OnDestroy()
 		{
 			_instance = null;
 		}
-
 	}
 }

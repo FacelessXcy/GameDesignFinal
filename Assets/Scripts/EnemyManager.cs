@@ -149,7 +149,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         
         _enemyCount++;
         temp.isBoomMonster = true;
-        _boomEnemys.Enqueue(temp);
+        //_boomEnemys.Enqueue(temp);
         temp.gameObject.SetActive(false);
         return temp;
     }
@@ -199,7 +199,10 @@ public class EnemyManager : MonoSingleton<EnemyManager>
         else
         {
             _boomEnemysPool.Recycle(controllerBase);
-            _boomEnemys.Dequeue();
+            if (_boomEnemys.Count>0)
+            {
+                _boomEnemys.Dequeue();
+            }
             controllerBase.gameObject.SetActive(false);
         }
 
@@ -209,7 +212,7 @@ public class EnemyManager : MonoSingleton<EnemyManager>
     {
         yield return new  WaitForSeconds(3f);
         _boomEnemysPool.Recycle(controllerBase);
-        if (_boomEnemys!=null)
+        if (_boomEnemys.Count>0)
         {
             _boomEnemys.Dequeue();
         }

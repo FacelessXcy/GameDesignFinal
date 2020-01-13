@@ -201,7 +201,7 @@ public class EnemyControllerBase : MonoBehaviour
             _fsm.AddStates(smallEnemyRelax,smallEnemyIdle,smallEnemyChase,
                 smallEnemyAttack,smallEnemyTakeDamage,smallEnemyDead);
         }
-
+        _fsm.AddStates(smallEnemyRelax);
 
     }
     
